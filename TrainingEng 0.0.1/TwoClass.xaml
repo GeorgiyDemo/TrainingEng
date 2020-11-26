@@ -1,0 +1,35 @@
+﻿<Page x:Class="TrainingEng_0._0._1.TwoClass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainingEng_0._0._1"
+      mc:Ignorable="d" 
+      d:DesignHeight="438" d:DesignWidth="918"
+      Title="2 класс">
+
+    <Grid Tag="">
+        <!-- <Frame x:Name="towthemalistframe" Content="" HorizontalAlignment="Left" Height="485" VerticalAlignment="Top" Width="918" Margin="10,-37,0,0"/>-->
+        <Button x:Name="TwoThema1"  Content="Мои буквы" HorizontalAlignment="Left" Height="40" Margin="65,17,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="TwoThema1_Click"/>
+        <Button x:Name="TwoThema2"  Content="Мой дом" HorizontalAlignment="Left" Height="40" Margin="65,88,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="TwoThema2_Click"/>
+        <Button x:Name="TwoThema3"  Content="Моя семья" HorizontalAlignment="Left" Height="40" Margin="65,159,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="TwoThema3_Click"/>
+        <Button x:Name="TwoThema4"  Content="В ванной" HorizontalAlignment="Left" Height="40" Margin="65,230,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="TwoThema4_Click"/>
+        <Button x:Name="TwoThema5"  Content="Весело в школе" HorizontalAlignment="Left" Height="40" Margin="65,301,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="TwoThema5_Click"/>
+        <Button x:Name="TwoThema6"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="279,17,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema7"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="279,88,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema8"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="279,159,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema9"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="279,230,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema10"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="279,301,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema11"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="489,17,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema12"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="489,88,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema13"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="489,159,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema14"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="489,230,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema15"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="489,301,0,0" VerticalAlignment="Top" Width="149" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema16"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,17,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema17"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,88,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema18"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,159,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema19"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,230,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoThema20"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,301,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18"/>
+        <Button x:Name="TwoItogTest"  Content="Итоговый тест" HorizontalAlignment="Left" Height="40" Margin="279,365,0,0" VerticalAlignment="Top" Width="359" Background="#B230B808" BorderBrush="{x:Null}" FontFamily="Corbel Light" FontSize="22"/>
+    </Grid>
+</Page>
