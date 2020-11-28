@@ -193,7 +193,7 @@ namespace TrainingEng_0._0._1
 
             //Заполняем названия button'ов из БД
             for (int i=0; i < ButtonsList.Count; i++)
-                ButtonsList[i].Content = SQLiteClass.SQLiteGet("SELECT text FROM Topics WHERE (class_id=" + TaskClass + " AND topic_id=" + (i+1).ToString() + ")");
+                ButtonsList[i].Content = SQLiteClass.SQLiteGetOne("SELECT text FROM Topics WHERE (class_id=" + TaskClass + " AND topic_id=" + (i+1).ToString() + ");");
 
         }
 
