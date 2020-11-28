@@ -22,9 +22,9 @@ namespace TrainingEng_0._0._1
     /// <summary>
     /// Логика взаимодействия для TwoThemaPractic_1.xaml
     /// </summary>
-    public partial class TwoThemaPractic_1 : Page
+    public partial class PracticeClass : Page
     {
-        public TwoThemaPractic_1()
+        public PracticeClass()
         {
             InitializeComponent();
             LabelItogShet.Visibility = Visibility.Hidden;

@@ -103,15 +103,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Globals.cs" />
     <Compile Include="SQLiteClass.cs" />
-    <Compile Include="TwoThemaPractic_1.xaml.cs">
-      <DependentUpon>TwoThemaPractic_1.xaml</DependentUpon>
+    <Compile Include="PracticeClass.xaml.cs">
+      <DependentUpon>PracticeClass.xaml</DependentUpon>
     </Compile>
     <Page Include="TheoryClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TwoClass.xaml">
+    <Page Include="TopicsClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,14 +127,14 @@
     <Compile Include="TheoryClass.xaml.cs">
       <DependentUpon>TheoryClass.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TwoClass.xaml.cs">
-      <DependentUpon>TwoClass.xaml</DependentUpon>
+    <Compile Include="TopicsClass.xaml.cs">
+      <DependentUpon>TopicsClass.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TwoThemaPractic_1.xaml">
+    <Page Include="PracticeClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace TrainingEng_0._0._1
 {
 
-    public partial class TwoClass : Page
+    public partial class TopicsClass : Page
     {
-        public TwoClass()
+        public TopicsClass()
         {
             InitializeComponent();
         }

@@ -18,31 +18,13 @@ using System.Data.SqlClient;
 
 namespace TrainingEng_0._0._1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    /// 
-    public static class Globals
-    {
-        public static int TheoryFail = 0;
-        public static int Classes = 0;
-    }
-
 
     public partial class MainWindow : Window
     {
-       /// string TheoryFail = null;
-       // public static string TheoryFail { get; set; }
-        //private SqlConnection sqlConnection = null;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            //sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\KursachBD.mdf;Integrated Security=True");
-
-           // sqlConnection.Open();
-
         }
   
 
@@ -50,7 +32,7 @@ namespace TrainingEng_0._0._1
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 2;
-            mainframe.Navigate(new TwoClass());
+            mainframe.Navigate(new TopicsClass());
             BtnPage1.Background = new SolidColorBrush(Colors.Green);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.White);
@@ -60,7 +42,7 @@ namespace TrainingEng_0._0._1
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 3;
-            mainframe.Navigate(new TwoClass());
+            mainframe.Navigate(new TopicsClass());
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.Green);
             BtnPage3.Background = new SolidColorBrush(Colors.White);
@@ -70,7 +52,7 @@ namespace TrainingEng_0._0._1
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 4;
-            mainframe.Navigate(new TwoClass());
+            mainframe.Navigate(new TopicsClass());
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.Green);

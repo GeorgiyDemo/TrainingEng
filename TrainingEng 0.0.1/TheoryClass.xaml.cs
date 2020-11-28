@@ -24,8 +24,7 @@ namespace TrainingEng_0._0._1
         public TheoryClass()
         {
            InitializeComponent();
-            //TheoryTwoTem1.Navigate(@"E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\Frame3.png");
-       
+
             if (Globals.TheoryFail != 0)
             {
 
@@ -36,14 +35,10 @@ namespace TrainingEng_0._0._1
                 //Выбранный класс школьника
                 String TaskClass = Globals.Classes.ToString();
 
-                MessageBox.Show("Задание №" + TaskClass + "_" + TaskNumber);
-
                 TheoryItem.Navigate(CurrentDir + @"\Theory\"+TaskClass+"_"+TaskNumber+".html");
        
             }
 
-            //TheoryTwoTem1.Navigate(@"E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\V_vannoy.html");
-       
         }
         
         //Возвращает полный путь до корневой папки проекта
@@ -58,7 +53,7 @@ namespace TrainingEng_0._0._1
 
         private void TwoThema1Practic_Click(object sender, RoutedEventArgs e)
         {
-            TwoThemaPractic_1 nextPage = new TwoThemaPractic_1();
+            PracticeClass nextPage = new PracticeClass();
             NavigationService.Navigate(nextPage);
         }
     }
