@@ -63,18 +63,22 @@ namespace TrainingEng_0._0._1
             ResultLabel.Visibility = Visibility.Hidden;
         }
 
+        //TODO Проверка на правильные ответы
         private void CheckResult_Click(object sender, RoutedEventArgs e)
         {
-
+            ResultLabel.Visibility = Visibility.Visible;
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
+            ResultLabel.Content = "Кол-во правильных ответов:\n4/5";
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
+
 
             //Получаем данные с SQLite
             var ResultList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
@@ -111,13 +115,17 @@ namespace TrainingEng_0._0._1
                 {
                     //TODO перемешивание верного ответа 
                     RadioButtons1[i].Visibility = Visibility.Visible;
+                    //MessageBox.Show(currentTask.Option1);
                     RadioButtons1[i].Content = currentTask.Option1;
+
                     RadioButtons2[i].Visibility = Visibility.Visible;
-                    RadioButtons1[i].Content = currentTask.Option2;
+                    RadioButtons2[i].Content = currentTask.Option2;
+
                     RadioButtons3[i].Visibility = Visibility.Visible;
-                    RadioButtons1[i].Content = currentTask.Option3;
+                    RadioButtons3[i].Content = currentTask.Option3;
+
                     RadioButtons4[i].Visibility = Visibility.Visible;
-                    RadioButtons1[i].Content = currentTask.Option4;
+                    RadioButtons4[i].Content = currentTask.Option4;
                     TextBoxes[i].Visibility = Visibility.Hidden;
                 }
 
