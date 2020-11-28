@@ -104,17 +104,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Globals.cs" />
-    <Compile Include="PracticeClassBackup.xaml.cs">
-      <DependentUpon>PracticeClassBackup.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SQLiteClass.cs" />
     <Compile Include="PracticeClass.xaml.cs">
       <DependentUpon>PracticeClass.xaml</DependentUpon>
     </Compile>
-    <Page Include="PracticeClassBackup.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="TheoryClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,18 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FonMenBock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Dog.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Cat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Monkey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="IkpnSound.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

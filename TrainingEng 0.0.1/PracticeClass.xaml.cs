@@ -99,40 +99,6 @@ namespace TrainingEng_0._0._1
             return result;
         }
 
-        //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
-        private void CheckResult_Click(object sender, RoutedEventArgs e)
-        {
-            //Кол-во верных заданий
-            int GoodTasksCounter = 0;
-            ResultLabel.Visibility = Visibility.Visible;
-
-            //Получаем ответы из элементов
-            String Task1Answer = GetTaskAnswer(Task1InputTextBox, Task1RadioButton1, Task1RadioButton2, Task1RadioButton3, Task1RadioButton4);
-            String Task2Answer = GetTaskAnswer(Task2InputTextBox, Task2RadioButton1, Task2RadioButton2, Task2RadioButton3, Task2RadioButton4);
-            String Task3Answer = GetTaskAnswer(Task3InputTextBox, Task3RadioButton1, Task3RadioButton2, Task3RadioButton3, Task3RadioButton4);
-            String Task4Answer = GetTaskAnswer(Task4InputTextBox, Task4RadioButton1, Task4RadioButton2, Task4RadioButton3, Task4RadioButton4);
-            String Task5Answer = GetTaskAnswer(Task5InputTextBox, Task5RadioButton1, Task5RadioButton2, Task5RadioButton3, Task5RadioButton4);
-
-            //Если результаты 1 задания равны, то +1
-            if (TaskKeysDict["Task1"].ToLower() == Task1Answer.ToLower())
-                GoodTasksCounter++;
-            //Если результаты 2 задания равны, то +1
-            if (TaskKeysDict["Task2"].ToLower() == Task2Answer.ToLower())
-                GoodTasksCounter++;
-            //Если результаты 3 задания равны, то +1
-            if (TaskKeysDict["Task3"].ToLower() == Task3Answer.ToLower())
-                GoodTasksCounter++;
-            //Если результаты 4 задания равны, то +1
-            if (TaskKeysDict["Task4"].ToLower() == Task4Answer.ToLower())
-                GoodTasksCounter++;
-            //Если результаты 5 задания равны, то +1
-            if (TaskKeysDict["Task5"].ToLower() == Task5Answer.ToLower())
-                GoodTasksCounter++;
-
-            //Выводим на Label результат
-            ResultLabel.Content = "Кол-во правильных ответов:\n"+GoodTasksCounter.ToString()+"/5";
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             ResultLabel.Content = "Кол-во правильных ответов:";
@@ -213,6 +179,46 @@ namespace TrainingEng_0._0._1
                 else
                     Images[i].Visibility = Visibility.Hidden;
             }
+        }
+
+
+        //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
+        private void CheckResultButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Кол-во верных заданий
+            int GoodTasksCounter = 0;
+            ResultLabel.Visibility = Visibility.Visible;
+
+            //Получаем ответы из элементов
+            String Task1Answer = GetTaskAnswer(Task1InputTextBox, Task1RadioButton1, Task1RadioButton2, Task1RadioButton3, Task1RadioButton4);
+            String Task2Answer = GetTaskAnswer(Task2InputTextBox, Task2RadioButton1, Task2RadioButton2, Task2RadioButton3, Task2RadioButton4);
+            String Task3Answer = GetTaskAnswer(Task3InputTextBox, Task3RadioButton1, Task3RadioButton2, Task3RadioButton3, Task3RadioButton4);
+            String Task4Answer = GetTaskAnswer(Task4InputTextBox, Task4RadioButton1, Task4RadioButton2, Task4RadioButton3, Task4RadioButton4);
+            String Task5Answer = GetTaskAnswer(Task5InputTextBox, Task5RadioButton1, Task5RadioButton2, Task5RadioButton3, Task5RadioButton4);
+
+            //Если результаты 1 задания равны, то +1
+            if (TaskKeysDict["Task1"].ToLower() == Task1Answer.ToLower())
+                GoodTasksCounter++;
+            //Если результаты 2 задания равны, то +1
+            if (TaskKeysDict["Task2"].ToLower() == Task2Answer.ToLower())
+                GoodTasksCounter++;
+            //Если результаты 3 задания равны, то +1
+            if (TaskKeysDict["Task3"].ToLower() == Task3Answer.ToLower())
+                GoodTasksCounter++;
+            //Если результаты 4 задания равны, то +1
+            if (TaskKeysDict["Task4"].ToLower() == Task4Answer.ToLower())
+                GoodTasksCounter++;
+            //Если результаты 5 задания равны, то +1
+            if (TaskKeysDict["Task5"].ToLower() == Task5Answer.ToLower())
+                GoodTasksCounter++;
+
+            //Выводим на Label результат
+            ResultLabel.Content = "Кол-во правильных ответов:\n" + GoodTasksCounter.ToString() + "/5";
+        }
+
+        private void ResultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("*Тут выводятся результаты*");
         }
     }
     
