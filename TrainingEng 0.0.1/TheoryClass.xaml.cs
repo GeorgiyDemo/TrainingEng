@@ -26,46 +26,22 @@ namespace TrainingEng_0._0._1
            InitializeComponent();
             //TheoryTwoTem1.Navigate(@"E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\Frame3.png");
        
-            if (Globals.TheoryFail != null)
+            if (Globals.TheoryFail != 0)
             {
 
                 //Получает текущую директорию
                 String CurrentDir = CurrentDirFormater();
+                //Текущий номер задания
+                String TaskNumber = Globals.TheoryFail.ToString();
+                //Выбранный класс школьника
+                String TaskClass = Globals.Classes.ToString();
 
-                if (Globals.Classes == 2)
-                {
-                    //TODO
-                    //QuestionBlock.Text = SQLiteClass.SQLiteGet("SELECT question FROM Questions WHERE id=" + thisnumber.ToString());
-                    //FirstAnswerButton.Content = "A: " + SQLiteClass.SQLiteGet("SELECT first FROM Questions WHERE id=" + thisnumber.ToString());
-                    if (Globals.TheoryFail == "Moi_bukvy")
-                    {
-                        TheoryTwoTem1.Navigate(CurrentDir+@"\Theory\Moi_bukvy.html");
-                    }
-                    else if (Globals.TheoryFail == "Moy_dom")
-                    {
-                        TheoryTwoTem1.Navigate(@"E:\TrainingEng.V2\TrainingEng 0.0.1\Theory\Moy_dom.html");
-                    }
-                    else if (Globals.TheoryFail == "Moya_semya")
-                    {
-                        TheoryTwoTem1.Navigate(@"E:\TrainingEng.V2\TrainingEng 0.0.1\Theory\Moya_semya.html");
-                    }
-                    else if (Globals.TheoryFail == "V_vannoy")
-                    {
-                        TheoryTwoTem1.Navigate(@"E:\TrainingEng.V2\TrainingEng 0.0.1\Theory\V_vannoy.html");
-                    }
-                    else if (Globals.TheoryFail == "Veselo_v_shkole")
-                    {
-                        TheoryTwoTem1.Navigate(@"E:\TrainingEng.V2\TrainingEng 0.0.1\Theory\Veselo_v_shkole.html");
-                    }
-                }
-                if (Globals.Classes == 3)
-                { 
+                MessageBox.Show("Задание №" + TaskClass + "_" + TaskNumber);
 
-                }
-                if (Globals.Classes == 4)
-                {
+                //QuestionBlock.Text = SQLiteClass.SQLiteGet("SELECT question FROM Questions WHERE id=" + thisnumber.ToString());
+                //FirstAnswerButton.Content = "A: " + SQLiteClass.SQLiteGet("SELECT first FROM Questions WHERE id=" + thisnumber.ToString());
 
-                }
+                TheoryItem.Navigate(CurrentDir + @"\Theory\"+TaskClass+"_"+TaskNumber+".html");
        
             }
 

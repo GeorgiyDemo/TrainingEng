@@ -24,7 +24,7 @@ namespace TrainingEng_0._0._1
     /// 
     public static class Globals
     {
-        public static string TheoryFail = null;
+        public static int TheoryFail = 0;
         public static int Classes = 0;
     }
 
@@ -48,18 +48,17 @@ namespace TrainingEng_0._0._1
 
         private void BtnPage1_Click(object sender, RoutedEventArgs e) // Переход на 1 лист АВТОРИЗАЦИЯ
         {
-            Globals.TheoryFail = null;
+            Globals.TheoryFail = 0;
             Globals.Classes = 2;
             mainframe.Navigate(new TwoClass());
             BtnPage1.Background = new SolidColorBrush(Colors.Green);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.White);
-            // mainFrame.NavigationService.Navigate(new Uri("LoginIN.xaml", UriKind.Relative));
         }
 
         private void BtnPage2_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = null;
+            Globals.TheoryFail = 0;
             Globals.Classes = 3;
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.Green);
@@ -69,16 +68,11 @@ namespace TrainingEng_0._0._1
 
         private void BtnPage3_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = null;
+            Globals.TheoryFail = 0;
             Globals.Classes = 4;
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.Green);
-            // webBrowser1.DocumentCompleted;
-            //    webBrowser1.Navigate("file:///D:/24.txt");
-            // webBrowser1.Navigate("file:///D:/eFoto.jpg");
-            // webBrowser1.Navigate("file:///D:/Frame2.png");
-            //WebBrowser1.Navigate("D://eq5KrzySaRo.jpg");
         }
 
         private void BtnPage4_Click(object sender, RoutedEventArgs e)

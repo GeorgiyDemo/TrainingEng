@@ -48,7 +48,7 @@ namespace TrainingEng_0._0._1
 
         private void TwoThema1_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = "Moi_bukvy";
+            Globals.TheoryFail = 1;
             TheoryClass nextPage = new TheoryClass();
             NavigationService.Navigate(nextPage);
             // https://techarks.ru/qa/csharp/kak-perejti-na-druguyu-strani-JK/
@@ -56,30 +56,35 @@ namespace TrainingEng_0._0._1
 
         private void TwoThema2_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = "Moy_dom";
+            Globals.TheoryFail = 2;
             TheoryClass nextPage = new TheoryClass();
             NavigationService.Navigate(nextPage);
         }
 
         private void TwoThema3_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = "Moya_semya";
+            Globals.TheoryFail = 3;
             TheoryClass nextPage = new TheoryClass();
             NavigationService.Navigate(nextPage);
         }
 
         private void TwoThema4_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = "V_vannoy";
+            Globals.TheoryFail = 4;
             TheoryClass nextPage = new TheoryClass();
             NavigationService.Navigate(nextPage);
         }
 
         private void TwoThema5_Click(object sender, RoutedEventArgs e)
         {
-            Globals.TheoryFail = "Veselo_v_shkole";
+            Globals.TheoryFail = 5;
             TheoryClass nextPage = new TheoryClass();
             NavigationService.Navigate(nextPage);
+        }
+
+        private void TwoItogTest_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
