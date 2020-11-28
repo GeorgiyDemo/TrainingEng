@@ -104,10 +104,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Globals.cs" />
+    <Compile Include="PracticeClassBackup.xaml.cs">
+      <DependentUpon>PracticeClassBackup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQLiteClass.cs" />
     <Compile Include="PracticeClass.xaml.cs">
       <DependentUpon>PracticeClass.xaml</DependentUpon>
     </Compile>
+    <Page Include="PracticeClassBackup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TheoryClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
