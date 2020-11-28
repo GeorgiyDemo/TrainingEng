@@ -38,9 +38,6 @@ namespace TrainingEng_0._0._1
 
                 MessageBox.Show("Задание №" + TaskClass + "_" + TaskNumber);
 
-                //QuestionBlock.Text = SQLiteClass.SQLiteGet("SELECT question FROM Questions WHERE id=" + thisnumber.ToString());
-                //FirstAnswerButton.Content = "A: " + SQLiteClass.SQLiteGet("SELECT first FROM Questions WHERE id=" + thisnumber.ToString());
-
                 TheoryItem.Navigate(CurrentDir + @"\Theory\"+TaskClass+"_"+TaskNumber+".html");
        
             }

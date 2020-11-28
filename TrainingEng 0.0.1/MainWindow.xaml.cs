@@ -50,30 +50,30 @@ namespace TrainingEng_0._0._1
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 2;
+            mainframe.Navigate(new TwoClass());
             BtnPage1.Background = new SolidColorBrush(Colors.Green);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.White);
-            mainframe.Navigate(new TwoClass());
         }
 
         private void BtnPage2_Click(object sender, RoutedEventArgs e)
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 3;
+            mainframe.Navigate(new TwoClass());
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.Green);
             BtnPage3.Background = new SolidColorBrush(Colors.White);
-            mainframe.Navigate(new TwoClass());
         }
 
         private void BtnPage3_Click(object sender, RoutedEventArgs e)
         {
             Globals.TheoryFail = 0;
             Globals.Classes = 4;
+            mainframe.Navigate(new TwoClass());
             BtnPage1.Background = new SolidColorBrush(Colors.White);
             BtnPage2.Background = new SolidColorBrush(Colors.White);
             BtnPage3.Background = new SolidColorBrush(Colors.Green);
-            mainframe.Navigate(new TwoClass());
         }
 
         private void BtnPage4_Click(object sender, RoutedEventArgs e)

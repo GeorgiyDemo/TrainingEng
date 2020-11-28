@@ -9,7 +9,7 @@ namespace TrainingEng_0._0._1
 {
     class SQLiteClass
     {
-        private static string ConnectionPath = "DataSource=../../../../MillionDatabase.db;";
+        private static string ConnectionPath = "DataSource=../../../TrainingEng.db;";
         public static void SQLiteExecute(string sql)
         {
 
