@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace TrainingEng_0._0._1
 {
@@ -69,10 +70,24 @@ namespace TrainingEng_0._0._1
                         //Читаем данные из СУБД
                         while (r.Read())
                         {
+
                             //Создаем экземпляры TaskClass
-                            TaskClass obj = new TaskClass(r.GetString(0), r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5), r.GetString(6), r.GetString(7), r.GetString(8), r.GetString(9));
+                            String TaskId = Globals.NullFilter(r.GetString(0));
+                            String TopicId = Globals.NullFilter(r.GetString(1));
+                            String ClassId = Globals.NullFilter(r.GetString(2));
+                            String TypeId = Globals.NullFilter(r.GetString(3));
+                            String Text = Globals.NullFilter(r.GetString(4));
+                            String Photo = Globals.NullFilter(r.GetString(5));
+                            String Option1 = Globals.NullFilter(r.GetString(6));
+                            String Option2 = Globals.NullFilter(r.GetString(7));
+                            String Option3 = Globals.NullFilter(r.GetString(8));
+                            String Option4 = Globals.NullFilter(r.GetString(9));
+
+                            MessageBox.Show(Option4);
+                            
+                            //TaskClass obj = new TaskClass(TaskId,);
                             //Добавляем в список
-                            TasksList.Add(obj);
+                            //TasksList.Add(obj);
                         }
                     }
                 }

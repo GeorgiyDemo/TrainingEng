@@ -29,7 +29,7 @@ namespace TrainingEng_0._0._1
             {
 
                 //Получает текущую директорию
-                String CurrentDir = CurrentDirFormater();
+                String CurrentDir = Globals.CurrentDirFormater();
                 //Текущий номер задания
                 String TaskNumber = Globals.TheoryFail.ToString();
                 //Выбранный класс школьника
@@ -41,15 +41,7 @@ namespace TrainingEng_0._0._1
 
         }
         
-        //Возвращает полный путь до корневой папки проекта
-        private String CurrentDirFormater()
-        {
-            String buffer = Directory.GetCurrentDirectory();
-            String[] words = buffer.Split('\\');
-            String[] newWords = words.Take(words.Count() - 2).ToArray();
-            return String.Join("\\", newWords);
-    
-        }
+
 
         private void TwoThema1Practic_Click(object sender, RoutedEventArgs e)
         {
