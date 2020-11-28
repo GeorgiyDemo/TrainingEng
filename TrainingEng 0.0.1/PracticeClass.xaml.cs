@@ -30,6 +30,8 @@ namespace TrainingEng_0._0._1
             LabelItogShet.Visibility = Visibility.Hidden;
         }
 
+
+        /*
         private void TwoThema1_Click(object sender, RoutedEventArgs e)
         {
             int points = 0;
@@ -98,13 +100,8 @@ namespace TrainingEng_0._0._1
                         Convert.ToString(points) + " / " + Convert.ToString(maxpoints);
                 LabelItogShet.Visibility = Visibility.Visible;
             }
-    }
-
-        private void ButtonSoundDuck_Click(object sender, RoutedEventArgs e)
-        {
-            SoundPlayer Simple = new SoundPlayer(@"E:\TrainingEng.V2\TrainingEng 0.0.1\Sound\AudDuck.wav");
-            Simple.Play();
         }
+        */
 
         private void Border_Initialized(object sender, EventArgs e)
         {
@@ -112,12 +109,25 @@ namespace TrainingEng_0._0._1
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
+
+            //Получаем данные с SQLite
             var ResultList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
-            for (int i=0; i< ResultList.Count; i++)
+            
+            
+            for (int i=0; i <ResultList.Count; i++)
             {
                 String text = ResultList[i].Text;
                 MessageBox.Show(text);
             }
+
+
+
+
+
+        }
+
+        private void CheckResult_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

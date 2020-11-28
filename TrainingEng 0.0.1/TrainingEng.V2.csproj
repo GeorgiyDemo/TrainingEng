@@ -132,6 +132,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TaskClass.cs" />
+    <Compile Include="TaskGraphicClass.cs" />
     <Compile Include="TheoryClass.xaml.cs">
       <DependentUpon>TheoryClass.xaml</DependentUpon>
     </Compile>
