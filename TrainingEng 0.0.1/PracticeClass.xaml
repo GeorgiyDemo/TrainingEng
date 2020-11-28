@@ -51,7 +51,7 @@
         <TextBox x:Name="Task5InputTextBox" HorizontalAlignment="Left" Height="24" Margin="228,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
 
         <Label x:Name="ResultLabel" Content="Кол-во правильных ответов" HorizontalAlignment="Left" Height="71" Margin="10,288,0,0" VerticalAlignment="Top" Width="226" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
-        <Button x:Name="ResultsButton"  Content="Проверить Тест" HorizontalAlignment="Left" Height="30" Margin="34,387,0,0" VerticalAlignment="Top" Width="149" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="ResultsButton_Click" Foreground="White"/>
+        <Button x:Name="ResultsButton"  Content="Результаты" HorizontalAlignment="Left" Height="30" Margin="34,387,0,0" VerticalAlignment="Top" Width="149" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="ResultsButton_Click" Foreground="White"/>
         <Button x:Name="CheckResultButton"  Content="Проверить Тест" HorizontalAlignment="Left" Height="30" Margin="34,352,0,0" VerticalAlignment="Top" Width="149" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="CheckResultButton_Click" Foreground="White"/>
     </Grid>
 </Page>
