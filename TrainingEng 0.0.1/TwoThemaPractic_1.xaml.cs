@@ -24,7 +24,6 @@ namespace TrainingEng_0._0._1
     /// </summary>
     public partial class TwoThemaPractic_1 : Page
     {
-        private SqlConnection sqlConnection = null;
         public TwoThemaPractic_1()
         {
             InitializeComponent();
@@ -109,6 +108,7 @@ namespace TrainingEng_0._0._1
 
         private void Border_Initialized(object sender, EventArgs e)
         {
+            MessageBox.Show("ИНИЦИАЛИЗИРОВАЛСЯ И ЖИВ");
            // sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\KursachBD.mdf;Integrated Security=True");
             
            // sqlConnection.Open();
