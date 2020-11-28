@@ -107,19 +107,11 @@
     <Compile Include="TwoThemaPractic_1.xaml.cs">
       <DependentUpon>TwoThemaPractic_1.xaml</DependentUpon>
     </Compile>
-    <Page Include="FourClass.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="TheoryClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ThreeClass.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TwoClass.xaml">
+    <Page Include="TopicsClass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,17 +123,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FourClass.xaml.cs">
-      <DependentUpon>FourClass.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TheoryClass.xaml.cs">
       <DependentUpon>TheoryClass.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThreeClass.xaml.cs">
-      <DependentUpon>ThreeClass.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TwoClass.xaml.cs">
-      <DependentUpon>TwoClass.xaml</DependentUpon>
+    <Compile Include="TopicsClass.xaml.cs">
+      <DependentUpon>TopicsClass.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
