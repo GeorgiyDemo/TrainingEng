@@ -6,47 +6,47 @@
       xmlns:local="clr-namespace:TrainingEng_0._0._1"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="950"
-      Title="TwoThemaPractic_1">
+      Title="TwoThemaPractic_1" Loaded="Page_Loaded">
 
     <Grid>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000" Initialized="Border_Initialized"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000"/>
         <RadioButton x:Name="Task1RadioButton1" Content="Dogs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="34,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task1RadioButton2" Content="Dog" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="86,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task1RadioButton3" Content="Doc" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="133,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task1RadioButton4" Content="Docs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="178,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
-        <Image x:Name="Task1Image" HorizontalAlignment="Left" Height="120" Margin="80,33,0,0" VerticalAlignment="Top" Width="92" Source="Cat.png"/>
+        <Image x:Name="Task1Image" HorizontalAlignment="Left" Height="120" Margin="34,33,0,0" VerticalAlignment="Top" Width="265" Source="Cat.png"/>
         <Label x:Name="Task1Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="34,151,0,0" VerticalAlignment="Top" Width="190" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task1InputTextBox" HorizontalAlignment="Left" Height="24" Margin="46,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        
+
         <RadioButton x:Name="Task2RadioButton1" Content="Dogs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="335,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task2RadioButton2" Content="Dog" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="387,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task2RadioButton3" Content="Doc" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="434,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task2RadioButton4" Content="Docs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="479,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
-        <Image x:Name="Task2Image" HorizontalAlignment="Left" Height="120" Margin="381,33,0,0" VerticalAlignment="Top" Width="92" Source="Cat.png"/>
+        <Image x:Name="Task2Image" HorizontalAlignment="Left" Height="120" Margin="304,33,0,0" VerticalAlignment="Top" Width="301" Source="Cat.png"/>
         <Label x:Name="Task2Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="335,151,0,0" VerticalAlignment="Top" Width="190" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task2InputTextBox" HorizontalAlignment="Left" Height="24" Margin="347,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        
+
         <RadioButton x:Name="Task3RadioButton1" Content="Dogs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="666,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task3RadioButton2" Content="Dog" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="718,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task3RadioButton3" Content="Doc" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="764,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task3RadioButton4" Content="Docs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="810,186,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
-        <Image x:Name="Task3Image" HorizontalAlignment="Left" Height="120" Margin="712,33,0,0" VerticalAlignment="Top" Width="92" Source="Cat.png"/>
+        <Image x:Name="Task3Image" HorizontalAlignment="Left" Height="120" Margin="610,33,0,0" VerticalAlignment="Top" Width="244" Source="Cat.png"/>
         <Label x:Name="Task3Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="666,151,0,0" VerticalAlignment="Top" Width="190" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task3InputTextBox" HorizontalAlignment="Left" Height="24" Margin="678,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        
+
         <RadioButton x:Name="Task4RadioButton1" Content="Dogs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="666,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task4RadioButton2" Content="Dog" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="718,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task4RadioButton3" Content="Doc" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="765,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task4RadioButton4" Content="Docs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="810,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
-        <Image x:Name="Task4Image" HorizontalAlignment="Left" Height="120" Margin="712,294,0,0" VerticalAlignment="Top" Width="92" Source="Cat.png"/>
+        <Image x:Name="Task4Image" HorizontalAlignment="Left" Height="120" Margin="666,294,0,0" VerticalAlignment="Top" Width="188" Source="Cat.png"/>
         <Label x:Name="Task4Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="666,412,0,0" VerticalAlignment="Top" Width="190" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task4InputTextBox" HorizontalAlignment="Left" Height="24" Margin="678,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
-        
+
         <RadioButton x:Name="Task5RadioButton1" Content="Dogs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="335,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task5RadioButton2" Content="Dog" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="387,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task5RadioButton3" Content="Doc" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="434,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
         <RadioButton x:Name="Task5RadioButton4" Content="Docs" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="479,447,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White"/>
-        <Image x:Name="Task5Image" HorizontalAlignment="Left" Height="120" Margin="381,294,0,0" VerticalAlignment="Top" Width="92" Source="Cat.png"/>
+        <Image x:Name="Task5Image" HorizontalAlignment="Left" Height="120" Margin="294,294,0,0" VerticalAlignment="Top" Width="263" Source="Cat.png"/>
         <Label x:Name="Task5Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="335,412,0,0" VerticalAlignment="Top" Width="190" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task5InputTextBox" HorizontalAlignment="Left" Height="24" Margin="347,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
 

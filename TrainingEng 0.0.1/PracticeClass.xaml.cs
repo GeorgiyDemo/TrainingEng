@@ -63,81 +63,14 @@ namespace TrainingEng_0._0._1
             ResultLabel.Visibility = Visibility.Hidden;
         }
 
+        private void CheckResult_Click(object sender, RoutedEventArgs e)
+        {
 
-        /*
-        private void TwoThema1_Click(object sender, RoutedEventArgs e)
-        {
-            int points = 0;
-            int maxpoints = 5;
-            if(TextBoxCat.Text == "" || TextBoxMonkey.Text == "" || 
-                TextBoxSlon.Text == "" || TextBoxUtka.Text == "" ||(
-                RadioButtonDog1.IsChecked == false && RadioButtonDog2.IsChecked == false &&
-                RadioButtonDog3.IsChecked == false && RadioButtonDog4.IsChecked == false))
-            {
-                MessageBox.Show("Ответье на все вопросы!");
-            }
-            else
-        {
-            if (TextBoxCat.Text == "Cat" || TextBoxCat.Text == "cat")
-            {
-                points++;
-                    TextBoxCat.Background = new SolidColorBrush(Colors.Green);
-            }
-                else
-                {
-                    TextBoxCat.Background = new SolidColorBrush(Colors.Red);
-                }
-            if (RadioButtonDog2.IsChecked == true)
-            {
-                points++;
-                    RadioButtonDog1.Background = new SolidColorBrush(Colors.Green);
-                    RadioButtonDog2.Background = new SolidColorBrush(Colors.Green);
-                    RadioButtonDog3.Background = new SolidColorBrush(Colors.Green);
-                    RadioButtonDog4.Background = new SolidColorBrush(Colors.Green);
-            }
-                else
-                {
-                    RadioButtonDog1.Background = new SolidColorBrush(Colors.Red);
-                    RadioButtonDog2.Background = new SolidColorBrush(Colors.Red);
-                    RadioButtonDog3.Background = new SolidColorBrush(Colors.Red);
-                    RadioButtonDog4.Background = new SolidColorBrush(Colors.Red);
-                }
-            if (TextBoxMonkey.Text == "Monkey" || TextBoxMonkey.Text == "monkey")
-            {
-                points++;
-                    TextBoxMonkey.Background = new SolidColorBrush(Colors.Green);
-            }
-                else
-                {
-                    TextBoxMonkey.Background = new SolidColorBrush(Colors.Red);
-                }
-            if (TextBoxSlon.Text == "Слон" || TextBoxSlon.Text == "слон")
-            {
-                points++;
-                    TextBoxSlon.Background = new SolidColorBrush(Colors.Green);
-            }
-                else
-                {
-                    TextBoxSlon.Background = new SolidColorBrush(Colors.Red);
-                }
-            if (TextBoxUtka.Text == "Утка" || TextBoxUtka.Text == "утка")
-            {
-                points++;
-                    TextBoxUtka.Background = new SolidColorBrush(Colors.Green);
-                }
-                else
-                {
-                    TextBoxUtka.Background = new SolidColorBrush(Colors.Red);
-                }
-                LabelItogShet.Content = "Количество правильных ответов: " +
-                        Convert.ToString(points) + " / " + Convert.ToString(maxpoints);
-                LabelItogShet.Visibility = Visibility.Visible;
-            }
         }
-        */
 
-        private void Border_Initialized(object sender, EventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
@@ -156,7 +89,8 @@ namespace TrainingEng_0._0._1
             List<RadioButton> RadioButtons3 = new List<RadioButton>() { Task1RadioButton3, Task2RadioButton3, Task3RadioButton3, Task4RadioButton3, Task5RadioButton3 };
             List<RadioButton> RadioButtons4 = new List<RadioButton>() { Task1RadioButton4, Task2RadioButton4, Task3RadioButton4, Task4RadioButton4, Task5RadioButton4 };
 
-            for (int i=0; i <ResultList.Count; i++)
+            string CurrentDir = Globals.CurrentDirFormater();
+            for (int i = 0; i < ResultList.Count; i++)
             {
                 TaskClass currentTask = ResultList[i];
 
@@ -186,22 +120,18 @@ namespace TrainingEng_0._0._1
                     RadioButtons1[i].Content = currentTask.Option4;
                     TextBoxes[i].Visibility = Visibility.Hidden;
                 }
-                //Если тип 1, то там один ответ, если тип 2 - buttons
 
-                //Проверка на ИЗОБРАЖЕНИЕ, ЕСЛИ ЕСТЬ - ОТОБРАЖАТЬ
+                //Если есть фото - отображаем
+                if (currentTask.Photo != null)
+                {
+                    Images[i].Visibility = Visibility.Visible;
+                    String ImageString = CurrentDir + currentTask.Photo;
+                    Images[i].Source = new BitmapImage(new Uri(ImageString));
+                }
+                //Если нет фото - не отображаем
+                else
+                    Images[i].Visibility = Visibility.Hidden;
             }
-
-            
-
-
-
-
-
-        }
-
-        private void CheckResult_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
     
