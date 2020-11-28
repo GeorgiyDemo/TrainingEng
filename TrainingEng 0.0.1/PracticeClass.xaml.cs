@@ -112,20 +112,12 @@ namespace TrainingEng_0._0._1
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
-            MessageBox.Show("ИНИЦИАЛИЗИРОВАЛСЯ И ЖИВ");
             var ResultList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
             for (int i=0; i< ResultList.Count; i++)
             {
                 String text = ResultList[i].Text;
                 MessageBox.Show(text);
             }
-
-
-           // sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\TrainingEng\TrainingEng 0.0.1\TrainingEng 0.0.1\TrainingEng 0.0.1\KursachBD.mdf;Integrated Security=True");
-            
-           // sqlConnection.Open();
-
-            //sqlDataAdapter = SqlDataAdapter("SELECT ");
 
         }
     }

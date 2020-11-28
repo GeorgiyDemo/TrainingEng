@@ -22,25 +22,7 @@ namespace TrainingEng_0._0._1
 
         }
 
-        //Фильтрация на null
-        public static String NullFilter(String Input)
-        {
-            String result;
-            if (String.IsNullOrEmpty(Input) == true)
-                result = "NULL";
-            else
-                result = Input;
-            return result;
-        }
-        public static String NullFilter(Nullable Input)
-        {
-            String result;
-            if (String.IsNullOrEmpty(Input) == true)
-                result = "NULL";
-            else
-                result = Input;
-            return "NULL";
-        }
+       
     }
 
 
