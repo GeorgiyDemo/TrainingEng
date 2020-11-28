@@ -57,23 +57,36 @@ namespace TrainingEng_0._0._1
 
     public partial class PracticeClass : Page
     {
+        private Dictionary<string, string> TaskKeysDict = new Dictionary<string, string>();
+        private int GoodTasksCounter;
         public PracticeClass()
         {
             InitializeComponent();
             ResultLabel.Visibility = Visibility.Hidden;
         }
 
+
+        //TODO Получение значений из элементов задания
+        private String GetTaskAnswer(TextBox textbot, RadioButton radio1, RadioButton radio2, RadioButton radio3, RadioButton radio4)
+        {
+            return "KOT";
+        }
         //TODO Проверка на правильные ответы
         private void CheckResult_Click(object sender, RoutedEventArgs e)
         {
+            //Кол-во верных заданий
+            GoodTasksCounter = 0;
             ResultLabel.Visibility = Visibility.Visible;
+
+            //gettaskanswer
+
             
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            ResultLabel.Content = "Кол-во правильных ответов:";
 
-            ResultLabel.Content = "Кол-во правильных ответов:\n4/5";
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
@@ -101,6 +114,9 @@ namespace TrainingEng_0._0._1
                 //Текст задания
                 Labels[i].Content = currentTask.Text;
 
+                //Словарь ответов
+                TaskKeysDict.Add("Task"+(i+1).ToString(), currentTask.Option4);
+
                 //Если тип задания без выбора от ответов, то деактивируем RadioButtons 
                 if (currentTask.TypeId == 2)
                 {
@@ -113,19 +129,26 @@ namespace TrainingEng_0._0._1
                 //Иначе это тип с выбором через RadioButtons
                 else
                 {
-                    //TODO перемешивание верного ответа 
+
+                    //Перемешиваем ответы
+                    String[] OfferArray = { currentTask.Option1, currentTask.Option2, currentTask.Option3, currentTask.Option4 };
+                    Random r = new Random();
+                    OfferArray = OfferArray.OrderBy(x => r.Next()).ToArray();
+
+
+                    //Перемешивание верного ответа 
                     RadioButtons1[i].Visibility = Visibility.Visible;
-                    //MessageBox.Show(currentTask.Option1);
-                    RadioButtons1[i].Content = currentTask.Option1;
+                    RadioButtons1[i].Content = OfferArray[0];
 
                     RadioButtons2[i].Visibility = Visibility.Visible;
-                    RadioButtons2[i].Content = currentTask.Option2;
+                    RadioButtons2[i].Content = OfferArray[1];
 
                     RadioButtons3[i].Visibility = Visibility.Visible;
-                    RadioButtons3[i].Content = currentTask.Option3;
+                    RadioButtons3[i].Content = OfferArray[2];
 
                     RadioButtons4[i].Visibility = Visibility.Visible;
-                    RadioButtons4[i].Content = currentTask.Option4;
+                    RadioButtons4[i].Content = OfferArray[3];
+
                     TextBoxes[i].Visibility = Visibility.Hidden;
                 }
 
