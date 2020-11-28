@@ -50,7 +50,7 @@
         <Label x:Name="Task5Label" Content="Как называется это животное:" HorizontalAlignment="Left" Height="30" Margin="216,357,0,0" VerticalAlignment="Top" Width="295" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="Task5InputTextBox" HorizontalAlignment="Left" Height="24" Margin="228,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="16"/>
 
-        <Label x:Name="ResultLabel" Content="Кол-во правильных ответов" HorizontalAlignment="Left" Height="30" Margin="10,322,0,0" VerticalAlignment="Top" Width="304" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="ResultLabel" Content="Кол-во правильных ответов" HorizontalAlignment="Left" Height="60" Margin="10,322,0,0" VerticalAlignment="Top" Width="226" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
         <Button x:Name="CheckResult"  Content="Проверить Тест" HorizontalAlignment="Left" Height="30" Margin="34,387,0,0" VerticalAlignment="Top" Width="149" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="CheckResult_Click" Foreground="White"/>
     </Grid>
 </Page>
