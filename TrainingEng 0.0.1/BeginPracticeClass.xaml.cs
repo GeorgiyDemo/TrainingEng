@@ -47,10 +47,19 @@ namespace TrainingEng_0._0._1
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            //Перемешивание вопросов в списке
-            TaskList = TaskList.OrderBy(a => Guid.NewGuid()).ToList();
-            PracticeClass newPractice = new PracticeClass(TaskList, 0);
-            NavigationService.Navigate(newPractice);
+            //Если ввели имя и прошли фильтрацию
+            if (NameInputTextBox.Text != "" )
+            {
+                String UserName = NameInputTextBox.Text;
+                //Перемешивание вопросов в списке
+                TaskList = TaskList.OrderBy(a => Guid.NewGuid()).ToList();
+                PracticeClass newPractice = new PracticeClass(UserName, TaskList, 0);
+                NavigationService.Navigate(newPractice);
+            }
+            else
+            {
+                MessageBox.Show("Для продолжения работы введите ваше имя");
+            }
         }
     }
     

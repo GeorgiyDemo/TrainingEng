@@ -26,12 +26,27 @@ namespace TrainingEng_0._0._1
 
     public partial class EndPracticeClass : Page
     {
-        public EndPracticeClass(int TotalPoints)
+        private String UserName;
+        private int TotalPoints;
+        public EndPracticeClass(String UserName, int TotalPoints)
         {
             InitializeComponent();
             //Вывод результата на экран
             ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString()+"/5";
-            //TODO запись итогов тестирования в СУБД
+
+            //Выставление полей
+            this.TotalPoints = TotalPoints;
+            this.UserName = UserName;
+
+            //Запись итогов тестирования в СУБД
+            this.ResultSQLWriter();
+
+        }
+        
+        //TODO Запись результата тестирования в SQlite
+        private void ResultSQLWriter()
+        {
+            MessageBox.Show("ЗАПИСАЛИ ДАННЫЕ В СУБД "); 
         }
     }
     

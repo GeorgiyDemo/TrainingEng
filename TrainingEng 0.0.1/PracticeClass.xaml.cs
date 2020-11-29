@@ -32,8 +32,9 @@ namespace TrainingEng_0._0._1
         private List<TaskClass> TaskList;
         private TaskClass CurrentTask;
         private int GoodAnswersCount;
+        private String UserName;
 
-        public PracticeClass(List<TaskClass> TaskList, int GoodAnswersCount)
+        public PracticeClass(String UserName, List<TaskClass> TaskList, int GoodAnswersCount)
         {
             InitializeComponent();
             //Текущее задание, которое мы отображаем на этой странице
@@ -43,6 +44,7 @@ namespace TrainingEng_0._0._1
             //Выставляем остальные поля
             this.TaskList = TaskList;
             this.GoodAnswersCount = GoodAnswersCount;
+            this.UserName = UserName;
             //Вызываем метод форматирования интерфейса
             this.PageFormater();
         }
@@ -148,11 +150,6 @@ namespace TrainingEng_0._0._1
             return result;
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
@@ -164,12 +161,12 @@ namespace TrainingEng_0._0._1
 
             if (this.TaskList.Count == 0)
             {
-                EndPracticeClass nextPage = new EndPracticeClass(this.GoodAnswersCount);
+                EndPracticeClass nextPage = new EndPracticeClass(this.UserName, this.GoodAnswersCount);
                 NavigationService.Navigate(nextPage);
             }
             else
             {
-                PracticeClass nextPage = new PracticeClass(this.TaskList, this.GoodAnswersCount);
+                PracticeClass nextPage = new PracticeClass(this.UserName, this.TaskList, this.GoodAnswersCount);
                 NavigationService.Navigate(nextPage);
             }
 
