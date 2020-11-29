@@ -47,6 +47,8 @@ namespace TrainingEng_0._0._1
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            //Перемешивание вопросов в списке
+            TaskList = TaskList.OrderBy(a => Guid.NewGuid()).ToList();
             PracticeClass newPractice = new PracticeClass(TaskList, 0);
             NavigationService.Navigate(newPractice);
         }
