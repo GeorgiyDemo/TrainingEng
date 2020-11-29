@@ -27,14 +27,19 @@ namespace TrainingEng_0._0._1
     public partial class PracticeClass : Page
     {
 
-        
-        public Dictionary<string, string> TaskKeysDict = new Dictionary<string, string>();
-        public TaskClass currentTask;
 
-        public PracticeClass(TaskClass currentTask)
+        private Dictionary<string, string> TaskKeysDict = new Dictionary<string, string>();
+        private List<TaskClass> TaskList;
+        private TaskClass CurrentTask;
+        private int GoodAnswersCount;
+
+        public PracticeClass(List<TaskClass> TaskList, int GoodAnswersCount)
         {
             InitializeComponent();
-            this.currentTask = currentTask;
+            this.CurrentTask = TaskList[0];
+            TaskList.RemoveAt(0);
+            this.TaskList = TaskList;
+            this.GoodAnswersCount = GoodAnswersCount;
 
             this.PageFormater();
             ResultLabel.Visibility = Visibility.Hidden;
@@ -81,24 +86,25 @@ namespace TrainingEng_0._0._1
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            ResultLabel.Content = "Кол-во правильных ответов:";
+
+            TaskKeysDict.Clear();
 
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
 
-            TaskClass currentTask = this.currentTask;
+            TaskClass CurrentTask = this.CurrentTask;
             string CurrentDir = Globals.CurrentDirFormater();
 
             //Текст задания
-            TaskLabel.Content = currentTask.Text;
+            TaskLabel.Content = CurrentTask.Text;
 
             //Словарь ответов
-            TaskKeysDict.Add("Task", currentTask.Option4);
+            TaskKeysDict.Add("Task", CurrentTask.Option4);
 
             //Если тип задания без выбора от ответов, то деактивируем RadioButtons 
-            if (currentTask.TypeId == 2)
+            if (CurrentTask.TypeId == 2)
             {
                 TaskRadioButton1.Visibility = Visibility.Hidden;
                 TaskRadioButton2.Visibility = Visibility.Hidden;
@@ -111,7 +117,7 @@ namespace TrainingEng_0._0._1
             {
 
                 //Перемешиваем ответы
-                String[] OfferArray = { currentTask.Option1, currentTask.Option2, currentTask.Option3, currentTask.Option4 };
+                String[] OfferArray = { CurrentTask.Option1, CurrentTask.Option2, CurrentTask.Option3, CurrentTask.Option4 };
                 Random r = new Random();
                 OfferArray = OfferArray.OrderBy(x => r.Next()).ToArray();
 
@@ -132,10 +138,10 @@ namespace TrainingEng_0._0._1
             }
 
             //Если есть фото - отображаем
-            if (currentTask.Photo != null)
+            if (CurrentTask.Photo != null)
             {
                 TaskImage.Visibility = Visibility.Visible;
-                String ImageString = CurrentDir + currentTask.Photo;
+                String ImageString = CurrentDir + CurrentTask.Photo;
                 TaskImage.Source = new BitmapImage(new Uri(ImageString));
             }
             //Если нет фото - не отображаем
@@ -146,21 +152,35 @@ namespace TrainingEng_0._0._1
         //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            //Кол-во верных заданий
-            int GoodTasksCounter = 0;
+            int LocaleCounter = 0;
             ResultLabel.Visibility = Visibility.Visible;
-
             //Получаем ответы из элементов
             String Task1Answer = GetTaskAnswer(TaskInputTextBox, TaskRadioButton1, TaskRadioButton2, TaskRadioButton3, TaskRadioButton4);
             //Если результаты 1 задания равны, то +1
             if (TaskKeysDict["Task"].ToLower() == Task1Answer.ToLower())
-                GoodTasksCounter++;
+            {
+                LocaleCounter++;
+                this.GoodAnswersCount++;
+            }
+
 
             //Выводим на Label результат
-            if (GoodTasksCounter == 0)
+            if (LocaleCounter == 0)
                 ResultLabel.Content = "Вы ответили неправильно";
             else
                 ResultLabel.Content = "Поздравляем, Вы ответили правильно";
+
+            if (this.TaskList.Count == 0)
+            {
+                EndPracticeClass nextPage = new EndPracticeClass(this.GoodAnswersCount);
+                NavigationService.Navigate(nextPage);
+            }
+            else
+            {
+                PracticeClass nextPage = new PracticeClass(this.TaskList, this.GoodAnswersCount);
+                NavigationService.Navigate(nextPage);
+            }
+
         }
     }
 

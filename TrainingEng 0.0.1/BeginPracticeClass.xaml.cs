@@ -26,7 +26,7 @@ namespace TrainingEng_0._0._1
 
     public partial class BeginPracticeClass : Page
     {
-        private List<TaskClass> ResultList;
+        private List<TaskClass> TaskList;
         public BeginPracticeClass(String TopicName)
         {
             InitializeComponent();
@@ -42,19 +42,13 @@ namespace TrainingEng_0._0._1
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
             //Получаем данные с SQLite
-            ResultList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
+            TaskList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < ResultList.Count; i++)
-            {
-                TaskClass currentTask = ResultList[i];
-
-                PracticeClass newPractice = new PracticeClass(currentTask);
-                NavigationService.Navigate(newPractice);
-                //TODO какая-нибудь обработка очков?
-            }
+            PracticeClass newPractice = new PracticeClass(TaskList, 0);
+            NavigationService.Navigate(newPractice);
         }
     }
     
