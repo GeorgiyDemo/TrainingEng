@@ -10,7 +10,7 @@
 
     <Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000"/>
+        <Label x:Name="ResultsLabel" HorizontalContentAlignment="Center" Content="Ваш результат:" HorizontalAlignment="Left" Height="97" Margin="10,96,0,0" VerticalAlignment="Top" Width="930" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
 
-        <Label x:Name="ResultsLabel" Content="Тестирование по теме:" HorizontalAlignment="Left" Height="97" Margin="292,62,0,0" VerticalAlignment="Top" Width="297" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
-     </Grid>
+   </Grid>
 </Page>

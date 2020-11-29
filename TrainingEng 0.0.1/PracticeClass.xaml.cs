@@ -36,16 +36,81 @@ namespace TrainingEng_0._0._1
         public PracticeClass(List<TaskClass> TaskList, int GoodAnswersCount)
         {
             InitializeComponent();
+            //Текущее задание, которое мы отображаем на этой странице
             this.CurrentTask = TaskList[0];
+            //Удаляем задание из списка, которое мы отображаем на этой странице
             TaskList.RemoveAt(0);
+            //Выставляем остальные поля
             this.TaskList = TaskList;
             this.GoodAnswersCount = GoodAnswersCount;
-
+            //Вызываем метод форматирования интерфейса
             this.PageFormater();
         }
 
+        //Метод для визуального оформления элементов в зависимости от текущего задания
         private void PageFormater()
         {
+            //Отображаем прогресс 
+            PointsLabel.Content = "Кол-во набранных баллов:\n"+this.GoodAnswersCount+"/5";
+
+            //Текущий номер топика
+            int TopicNumber = Globals.TheoryFail;
+            //Выбранный класс школьника
+            int ClassNumber = Globals.Classes;
+
+            TaskClass CurrentTask = this.CurrentTask;
+            string CurrentDir = Globals.CurrentDirFormater();
+
+            //Текст задания
+            TaskLabel.Content = CurrentTask.Text;
+
+            //Выставляем правильный ответ
+            this.TaskKey = CurrentTask.Option4;
+
+            //Если тип задания без выбора от ответов, то деактивируем RadioButtons 
+            if (CurrentTask.TypeId == 2)
+            {
+                TaskRadioButton1.Visibility = Visibility.Hidden;
+                TaskRadioButton2.Visibility = Visibility.Hidden;
+                TaskRadioButton3.Visibility = Visibility.Hidden;
+                TaskRadioButton4.Visibility = Visibility.Hidden;
+                TaskInputTextBox.Visibility = Visibility.Visible;
+            }
+
+            //Иначе это тип с выбором через RadioButtons
+            else
+            {
+                //Перемешиваем ответы
+                String[] OfferArray = { CurrentTask.Option1, CurrentTask.Option2, CurrentTask.Option3, CurrentTask.Option4 };
+                Random r = new Random();
+                OfferArray = OfferArray.OrderBy(x => r.Next()).ToArray();
+
+                //Перемешивание верного ответа 
+                TaskRadioButton1.Visibility = Visibility.Visible;
+                TaskRadioButton1.Content = OfferArray[0];
+
+                TaskRadioButton2.Visibility = Visibility.Visible;
+                TaskRadioButton2.Content = OfferArray[1];
+
+                TaskRadioButton3.Visibility = Visibility.Visible;
+                TaskRadioButton3.Content = OfferArray[2];
+
+                TaskRadioButton4.Visibility = Visibility.Visible;
+                TaskRadioButton4.Content = OfferArray[3];
+
+                TaskInputTextBox.Visibility = Visibility.Hidden;
+            }
+
+            //Если есть фото - отображаем
+            if (CurrentTask.Photo != null)
+            {
+                TaskImage.Visibility = Visibility.Visible;
+                String ImageString = CurrentDir + CurrentTask.Photo;
+                TaskImage.Source = new BitmapImage(new Uri(ImageString));
+            }
+            //Если нет фото - не отображаем
+            else
+                TaskImage.Visibility = Visibility.Hidden;
 
         }
 
@@ -86,84 +151,16 @@ namespace TrainingEng_0._0._1
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //Текущий номер топика
-            int TopicNumber = Globals.TheoryFail;
-            //Выбранный класс школьника
-            int ClassNumber = Globals.Classes;
-
-            TaskClass CurrentTask = this.CurrentTask;
-            string CurrentDir = Globals.CurrentDirFormater();
-
-            //Текст задания
-            TaskLabel.Content = CurrentTask.Text;
-
-            //Выставляем правильный ответ
-            this.TaskKey = CurrentTask.Option4;
-
-            //Если тип задания без выбора от ответов, то деактивируем RadioButtons 
-            if (CurrentTask.TypeId == 2)
-            {
-                TaskRadioButton1.Visibility = Visibility.Hidden;
-                TaskRadioButton2.Visibility = Visibility.Hidden;
-                TaskRadioButton3.Visibility = Visibility.Hidden;
-                TaskRadioButton4.Visibility = Visibility.Hidden;
-                TaskInputTextBox.Visibility = Visibility.Visible;
-            }
-            
-            //Иначе это тип с выбором через RadioButtons
-            else
-            {
-                //Перемешиваем ответы
-                String[] OfferArray = { CurrentTask.Option1, CurrentTask.Option2, CurrentTask.Option3, CurrentTask.Option4 };
-                Random r = new Random();
-                OfferArray = OfferArray.OrderBy(x => r.Next()).ToArray();
-
-                //Перемешивание верного ответа 
-                TaskRadioButton1.Visibility = Visibility.Visible;
-                TaskRadioButton1.Content = OfferArray[0];
-
-                TaskRadioButton2.Visibility = Visibility.Visible;
-                TaskRadioButton2.Content = OfferArray[1];
-
-                TaskRadioButton3.Visibility = Visibility.Visible;
-                TaskRadioButton3.Content = OfferArray[2];
-
-                TaskRadioButton4.Visibility = Visibility.Visible;
-                TaskRadioButton4.Content = OfferArray[3];
-
-                TaskInputTextBox.Visibility = Visibility.Hidden;
-            }
-
-            //Если есть фото - отображаем
-            if (CurrentTask.Photo != null)
-            {
-                TaskImage.Visibility = Visibility.Visible;
-                String ImageString = CurrentDir + CurrentTask.Photo;
-                TaskImage.Source = new BitmapImage(new Uri(ImageString));
-            }
-            //Если нет фото - не отображаем
-            else
-                TaskImage.Visibility = Visibility.Hidden;
-            }
+        }
 
         //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            int LocaleCounter = 0;
             //Получаем ответы из элементов
             String Task1Answer = GetTaskAnswer(TaskInputTextBox, TaskRadioButton1, TaskRadioButton2, TaskRadioButton3, TaskRadioButton4);
             //Если результаты 1 задания равны, то +1
             if (TaskKey.ToLower() == Task1Answer.ToLower())
-            {
-                LocaleCounter++;
                 this.GoodAnswersCount++;
-            }
-
-            //Выводим результат
-            if (LocaleCounter == 0)
-                MessageBox.Show("Вы ответили неправильно");
-            else
-                MessageBox.Show("Поздравляем, Вы ответили правильно");
 
             if (this.TaskList.Count == 0)
             {
