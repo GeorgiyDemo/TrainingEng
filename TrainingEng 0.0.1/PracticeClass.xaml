@@ -9,16 +9,14 @@
       Title="TwoThemaPractic_1" Loaded="Page_Loaded">
 
     <Grid>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000"/>
+        <Border BorderThickness="1"  HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000"/>
         <RadioButton x:Name="TaskRadioButton1" GroupName="Task1" Content="Data1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="300,271,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White" Height="13" Width="66"/>
         <RadioButton x:Name="TaskRadioButton2" GroupName="Task1" Content="Data2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="371,271,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White" Height="13" Width="68"/>
         <RadioButton x:Name="TaskRadioButton3" GroupName="Task1" Content="Data3" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="436,271,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White" Height="13" Width="66"/>
         <RadioButton x:Name="TaskRadioButton4" GroupName="Task1" Content="Data4" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Margin="498,271,0,0" BorderBrush="White" FontFamily="Corbel Light" Foreground="White" Height="13" Width="67"/>
         <Image x:Name="TaskImage" HorizontalAlignment="Left" Height="156" Margin="195,39,0,0" VerticalAlignment="Top" Width="502" Source="Logo1.png"/>
-        <Label x:Name="TaskLabel" Content="Как называется это животное:" HorizontalAlignment="Left" Height="60" Margin="90,195,0,0" VerticalAlignment="Top" Width="688" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="TaskLabel" Content="ТЕКСТ ЗАДАНИЯ" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="60" Margin="90,195,0,0" VerticalAlignment="Top" Width="688" FontFamily="Corbel Light" FontSize="14" Background="{x:Null}" Foreground="White"/>
         <TextBox x:Name="TaskInputTextBox" HorizontalAlignment="Left" Height="24" Margin="321,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="16"/>
-
-        <Label x:Name="ResultLabel" Content="Вы ответили правильно/неправильно" HorizontalAlignment="Left" Height="44" Margin="260,307,0,0" VerticalAlignment="Top" Width="335" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
         <Button x:Name="NextButton"  Content="Далее" HorizontalAlignment="Left" Height="37" Margin="321,356,0,0" VerticalAlignment="Top" Width="228" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="NextButton_Click" Foreground="White"/>
     </Grid>
 </Page>

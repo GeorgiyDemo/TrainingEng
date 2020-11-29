@@ -28,7 +28,7 @@ namespace TrainingEng_0._0._1
     {
 
 
-        private Dictionary<string, string> TaskKeysDict = new Dictionary<string, string>();
+        private string TaskKey;
         private List<TaskClass> TaskList;
         private TaskClass CurrentTask;
         private int GoodAnswersCount;
@@ -42,7 +42,6 @@ namespace TrainingEng_0._0._1
             this.GoodAnswersCount = GoodAnswersCount;
 
             this.PageFormater();
-            ResultLabel.Visibility = Visibility.Hidden;
         }
 
         private void PageFormater()
@@ -87,8 +86,6 @@ namespace TrainingEng_0._0._1
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-            TaskKeysDict.Clear();
-
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
@@ -100,8 +97,8 @@ namespace TrainingEng_0._0._1
             //Текст задания
             TaskLabel.Content = CurrentTask.Text;
 
-            //Словарь ответов
-            TaskKeysDict.Add("Task", CurrentTask.Option4);
+            //Выставляем правильный ответ
+            this.TaskKey = CurrentTask.Option4;
 
             //Если тип задания без выбора от ответов, то деактивируем RadioButtons 
             if (CurrentTask.TypeId == 2)
@@ -112,10 +109,10 @@ namespace TrainingEng_0._0._1
                 TaskRadioButton4.Visibility = Visibility.Hidden;
                 TaskInputTextBox.Visibility = Visibility.Visible;
             }
+            
             //Иначе это тип с выбором через RadioButtons
             else
             {
-
                 //Перемешиваем ответы
                 String[] OfferArray = { CurrentTask.Option1, CurrentTask.Option2, CurrentTask.Option3, CurrentTask.Option4 };
                 Random r = new Random();
@@ -153,22 +150,20 @@ namespace TrainingEng_0._0._1
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             int LocaleCounter = 0;
-            ResultLabel.Visibility = Visibility.Visible;
             //Получаем ответы из элементов
             String Task1Answer = GetTaskAnswer(TaskInputTextBox, TaskRadioButton1, TaskRadioButton2, TaskRadioButton3, TaskRadioButton4);
             //Если результаты 1 задания равны, то +1
-            if (TaskKeysDict["Task"].ToLower() == Task1Answer.ToLower())
+            if (TaskKey.ToLower() == Task1Answer.ToLower())
             {
                 LocaleCounter++;
                 this.GoodAnswersCount++;
             }
 
-
-            //Выводим на Label результат
+            //Выводим результат
             if (LocaleCounter == 0)
-                ResultLabel.Content = "Вы ответили неправильно";
+                MessageBox.Show("Вы ответили неправильно");
             else
-                ResultLabel.Content = "Поздравляем, Вы ответили правильно";
+                MessageBox.Show("Поздравляем, Вы ответили правильно");
 
             if (this.TaskList.Count == 0)
             {
