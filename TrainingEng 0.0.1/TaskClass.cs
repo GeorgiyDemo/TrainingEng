@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TrainingEng_0._0._1
 {
 
-    class TaskClass
+    public class TaskClass
     {
 
         public int TaskId;

@@ -51,6 +51,9 @@ namespace TrainingEng_0._0._1
             {
                 TaskClass currentTask = ResultList[i];
 
+                PracticeClass newPractice = new PracticeClass(currentTask);
+                NavigationService.Navigate(newPractice);
+                //TODO какая-нибудь обработка очков?
             }
         }
     }
