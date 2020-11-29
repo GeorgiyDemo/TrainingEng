@@ -43,6 +43,7 @@ namespace TrainingEng_0._0._1
 
         private void StartPracticeButton_Click(object sender, RoutedEventArgs e)
         {
+            
             BeginPracticeClass nextPage = new BeginPracticeClass(this.TopicName);
             NavigationService.Navigate(nextPage);
         }
