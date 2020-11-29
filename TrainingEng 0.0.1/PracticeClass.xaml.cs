@@ -24,37 +24,6 @@ namespace TrainingEng_0._0._1
     /// </summary>
     /// 
 
-    class TaskGraphicClass
-    {
-        public Image LocalImage;
-        public Label LocalLabel;
-        public TextBox LocalTextBox;
-        public RadioButton Radio1;
-        public RadioButton Radio2;
-        public RadioButton Radio3;
-        public RadioButton Radio4;
-        public TaskClass obj;
-
-        public TaskGraphicClass(Image LocalImage, Label LocalLabel, TextBox LocalTextBox, RadioButton Radio1, RadioButton Radio2, RadioButton Radio3, RadioButton Radio4, TaskClass obj)
-        {
-            this.LocalImage = LocalImage;
-            this.LocalLabel = LocalLabel;
-            this.LocalTextBox = LocalTextBox;
-            this.Radio1 = Radio1;
-            this.Radio2 = Radio2;
-            this.Radio3 = Radio3;
-            this.Radio4 = Radio4;
-            this.obj = obj;
-        }
-
-
-        //Проверяет на корректность выбранных данных
-        public Boolean IsCorrect()
-        {
-            return true;
-        }
-    }
-
     public partial class PracticeClass : Page
     {
         private Dictionary<string, string> TaskKeysDict = new Dictionary<string, string>();
@@ -185,7 +154,7 @@ namespace TrainingEng_0._0._1
         //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
         private void CheckResultButton_Click(object sender, RoutedEventArgs e)
         {
-            //Кол-во верных заданий
+           //Кол-во верных заданий
             int GoodTasksCounter = 0;
             ResultLabel.Visibility = Visibility.Visible;
 
