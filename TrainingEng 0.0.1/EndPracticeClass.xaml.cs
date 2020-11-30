@@ -43,7 +43,7 @@ namespace TrainingEng_0._0._1
 
         }
         
-        //TODO Запись результата тестирования в SQlite
+        //Запись результата тестирования в SQlite
         private void ResultSQLWriter()
         {
             //Текущий номер топика
@@ -59,6 +59,12 @@ namespace TrainingEng_0._0._1
             String SQLString = String.Format("INSERT INTO Results(class_id, topic_id, points,username, time) VALUES ({0},{1},{2},'{3}','{4}')",TaskClass, TopicNumber, this.TotalPoints, this.UserName, TimeNow);
             SQLiteClass.SQLiteExecute(SQLString);
 
+        }
+
+        private void DownloadButton_Click(object sender, RoutedEventArgs e)
+        {
+            String TimeNow = DateTime.Now.ToString("ddMMyyyy HHmmss");
+            PDFCreatorClass PdfObject = new PDFCreatorClass("Export " + TimeNow + ".pdf", "ТЕСТ");
         }
     }
     
