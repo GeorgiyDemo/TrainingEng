@@ -122,6 +122,7 @@
     <Compile Include="PracticeClass.xaml.cs">
       <DependentUpon>PracticeClass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserResultsClass.cs" />
     <Page Include="EndPracticeClass.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

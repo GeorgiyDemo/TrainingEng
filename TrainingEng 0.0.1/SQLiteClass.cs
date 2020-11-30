@@ -98,6 +98,25 @@ namespace TrainingEng_0._0._1
 
         }
 
-          
-    }
+        public static List<UserResultsClass> SQLiteGetUserResults(String UserName)
+        {
+            var UserResultsList = new List<UserResultsClass>();
+
+            using (SqliteConnection con = new SqliteConnection(ConnectionPath))
+            {
+                con.Open();
+
+                String SQLString = String.Format("SELECT * FROM Results WHERE username='{0}';", UserName);
+                using (SqliteCommand cmd = new SqliteCommand(SQLString, con))
+                {
+                    using (SqliteDataReader r = cmd.ExecuteReader())
+                    {
+                        //Читаем данные из СУБД
+                        while (r.Read())
+                        {
+                            String Option4 = r.IsDBNull(10) ? null : r.GetString(1);
+                            TaskClass obj = new TaskClass(TaskId, TopicId, ClassId, TypeId, Text, Photo, Option1, Option2, Option3, Option4);
+                            //Добавляем в список
+                            TasksList.Add(obj);
+                        }
 }
