@@ -46,15 +46,19 @@ namespace TrainingEng_0._0._1
         //TODO Запись результата тестирования в SQlite
         private void ResultSQLWriter()
         {
-            //Текущий номер задания
-            String TaskNumber = Globals.TheoryFail.ToString();
+            //Текущий номер топика
+            String TopicNumber = Globals.TheoryFail.ToString();
             
             //Выбранный класс школьника
             String TaskClass = Globals.Classes.ToString();
-            this.UserName.Replace("'","0");
 
-            SQLiteClass.SQLiteExecute("INSERT INTO Results(class_id, topic_id, points,username, time) VALUES ("")")
-            MessageBox.Show("ЗАПИСАЛИ ДАННЫЕ В СУБД "); 
+            //Текущее время
+            String TimeNow = DateTime.Now.ToString(@"dd\/MM\/yyyy HH:mm:ss");
+
+            //Строка для записи данных в SQLite
+            String SQLString = String.Format("INSERT INTO Results(class_id, topic_id, points,username, time) VALUES ({0},{1},{2},'{3}','{4}')",TaskClass, TopicNumber, this.TotalPoints, this.UserName, TimeNow);
+            SQLiteClass.SQLiteExecute(SQLString);
+
         }
     }
     
