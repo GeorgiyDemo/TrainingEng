@@ -23,10 +23,9 @@ namespace TrainingEng_0._0._1
 
         }
 
-        //TODO
         public override string ToString()
         {
-            return "";
+            return classId.ToString()+" "+ topicId.ToString()+" "+ points.ToString() +" "+ username.ToString() + " " + time.ToString();
         }
     }
 }

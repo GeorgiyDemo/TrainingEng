@@ -52,14 +52,14 @@ namespace TrainingEng_0._0._1
             return outstr;
         }
 
- 
+
 
         //Получение заданий (объектов класса TaskClass) из SQLite
         public static List<TaskClass> SQLiteGetTasks(int TopicNumber, int ClassNumber)
         {
 
             var TasksList = new List<TaskClass>();
-            
+
             using (SqliteConnection con = new SqliteConnection(ConnectionPath))
             {
                 con.Open();
@@ -73,17 +73,17 @@ namespace TrainingEng_0._0._1
                         while (r.Read())
                         {
 
-                           //Получаем поля
-                           String TaskId = r.IsDBNull(1) ? null : r.GetString(1);
-                           String TopicId = r.IsDBNull(2) ? null : r.GetString(2);
-                           String ClassId = r.IsDBNull(3) ? null : r.GetString(3);
-                           String TypeId = r.IsDBNull(4) ? null : r.GetString(4);
-                           String Text = r.IsDBNull(5) ? null : r.GetString(5);
-                           String Photo = r.IsDBNull(6) ? null : r.GetString(6);
-                           String Option1 = r.IsDBNull(7) ? null : r.GetString(7);
-                           String Option2 = r.IsDBNull(8) ? null : r.GetString(8);
-                           String Option3 = r.IsDBNull(9) ? null : r.GetString(9);
-                           String Option4 = r.IsDBNull(10) ? null : r.GetString(10);
+                            //Получаем поля
+                            String TaskId = r.IsDBNull(1) ? null : r.GetString(1);
+                            String TopicId = r.IsDBNull(2) ? null : r.GetString(2);
+                            String ClassId = r.IsDBNull(3) ? null : r.GetString(3);
+                            String TypeId = r.IsDBNull(4) ? null : r.GetString(4);
+                            String Text = r.IsDBNull(5) ? null : r.GetString(5);
+                            String Photo = r.IsDBNull(6) ? null : r.GetString(6);
+                            String Option1 = r.IsDBNull(7) ? null : r.GetString(7);
+                            String Option2 = r.IsDBNull(8) ? null : r.GetString(8);
+                            String Option3 = r.IsDBNull(9) ? null : r.GetString(9);
+                            String Option4 = r.IsDBNull(10) ? null : r.GetString(10);
 
                             TaskClass obj = new TaskClass(TaskId, TopicId, ClassId, TypeId, Text, Photo, Option1, Option2, Option3, Option4);
                             //Добавляем в список
@@ -114,9 +114,14 @@ namespace TrainingEng_0._0._1
                         //Читаем данные из СУБД
                         while (r.Read())
                         {
-                            String Option4 = r.IsDBNull(10) ? null : r.GetString(1);
-                            TaskClass obj = new TaskClass(TaskId, TopicId, ClassId, TypeId, Text, Photo, Option1, Option2, Option3, Option4);
+                            UserResultsClass obj = new UserResultsClass(r.GetString(1), r.GetString(2), r.GetString(3), r.GetString(4), r.GetString(5));
                             //Добавляем в список
-                            TasksList.Add(obj);
+                            UserResultsList.Add(obj);
                         }
+                    }
+                }
+            }
+            return UserResultsList;
+        }
+    }
 }
