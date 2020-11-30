@@ -64,7 +64,8 @@ namespace TrainingEng_0._0._1
         private void DownloadButton_Click(object sender, RoutedEventArgs e)
         {
             String TimeNow = DateTime.Now.ToString("ddMMyyyy HHmmss");
-            PDFCreatorClass PdfObject = new PDFCreatorClass("Export " + TimeNow + ".pdf", "ТЕСТ");
+            List<UserResultsClass> UserResults = SQLiteClass.SQLiteGetUserResults(this.UserName);
+            PDFCreatorClass PdfObject = new PDFCreatorClass("Export " + TimeNow + ".pdf", this.UserName, UserResults);
         }
     }
     

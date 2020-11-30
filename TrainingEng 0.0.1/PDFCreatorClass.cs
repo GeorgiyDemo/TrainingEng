@@ -15,17 +15,18 @@ namespace TrainingEng_0._0._1
 {
     class PDFCreatorClass
     {
+        
         private Table table;
         private Document document;
         private String FileName;
-        private String FileContent;
+        private String UserName;
+        private List<UserResultsClass> ResultsList;
 
-        public PDFCreatorClass(String FileName, String FileContent)
+        public PDFCreatorClass(String FileName, String UserName, List<UserResultsClass> ResultsList)
         {
             this.FileName = FileName;
-            this.FileContent = FileContent;
-
-            //Запускаем создание PDF
+            this.UserName = UserName;
+            this.ResultsList = ResultsList;
             this.CreateDocument();
         }
 
@@ -103,7 +104,7 @@ namespace TrainingEng_0._0._1
             paragraph = section.AddParagraph();
             paragraph.Format.SpaceBefore = "8cm";
             paragraph.Style = "Reference";
-            paragraph.AddFormattedText("INVOICE", TextFormat.Bold);
+            paragraph.AddFormattedText("Результаты пользователя "+this.UserName, TextFormat.Bold);
             paragraph.AddTab();
             paragraph.AddText("Cologne, ");
             paragraph.AddDateField("dd.MM.yyyy");
@@ -117,37 +118,45 @@ namespace TrainingEng_0._0._1
             this.table.Rows.LeftIndent = 0;
 
             // Before you can add a row, you must define the columns
-            Column column = this.table.AddColumn("1cm");
+            Column column = this.table.AddColumn("3.5cm");
             column.Format.Alignment = ParagraphAlignment.Center;
 
-            column = this.table.AddColumn("2.5cm");
-            column.Format.Alignment = ParagraphAlignment.Right;
-
-            column = this.table.AddColumn("3cm");
+            column = this.table.AddColumn("3.5cm");
             column.Format.Alignment = ParagraphAlignment.Right;
 
             column = this.table.AddColumn("3.5cm");
             column.Format.Alignment = ParagraphAlignment.Right;
 
-            column = this.table.AddColumn("2cm");
-            column.Format.Alignment = ParagraphAlignment.Center;
-
-            column = this.table.AddColumn("4cm");
+            column = this.table.AddColumn("3.5cm");
             column.Format.Alignment = ParagraphAlignment.Right;
 
-            // Create the header of the table
+            column = this.table.AddColumn("3.5cm");
+            column.Format.Alignment = ParagraphAlignment.Center;
+
             Row row = table.AddRow();
             row.HeadingFormat = true;
             row.Format.Alignment = ParagraphAlignment.Center;
             row.Format.Font.Bold = true;
-            row.Cells[0].AddParagraph("Item");
-            row.Cells[0].Format.Font.Bold = false;
+
+            row.Cells[0].AddParagraph("№ класса");
             row.Cells[0].Format.Alignment = ParagraphAlignment.Left;
             row.Cells[0].MergeDown = 1;
-            row.Cells[1].AddParagraph("Title and Author");
-            row.Cells[1].Format.Alignment = ParagraphAlignment.Left;
-            row.Cells[1].MergeRight = 3;
 
+            row.Cells[1].AddParagraph("№ темы");
+            row.Cells[1].Format.Alignment = ParagraphAlignment.Left;
+            row.Cells[1].MergeDown = 1;
+
+            row.Cells[2].AddParagraph("Кол-во правильных ответов");
+            row.Cells[2].Format.Alignment = ParagraphAlignment.Left;
+            row.Cells[2].MergeDown = 1;
+
+            row.Cells[3].AddParagraph("ФИО");
+            row.Cells[3].Format.Alignment = ParagraphAlignment.Left;
+            row.Cells[3].MergeDown = 1;
+
+            row.Cells[4].AddParagraph("Дата/время");
+            row.Cells[4].Format.Alignment = ParagraphAlignment.Center;
+            row.Cells[4].MergeDown = 1;
 
         }
 
@@ -156,21 +165,16 @@ namespace TrainingEng_0._0._1
         private void FillContent()
         {
 
-            // Iterate the invoice items
-            double totalExtendedPrice = 0;
-
-            for (int i=0;i<10;i++)
+            for (int i=0;i< ResultsList.Count; i++)
             {
-                double quantity = 0.2;
-                double price = 228.4;
-                double discount = 1488.4;
-
-                Row row1 = this.table.AddRow();
-                Row row2 = this.table.AddRow();
-               
-                row1.Cells[0].AddParagraph("itemNumber");
-                row2.Cells[0].AddParagraph(quantity.ToString());
-             }
+                UserResultsClass thisResult = ResultsList[i];
+                Row row = this.table.AddRow();
+                row.Cells[0].AddParagraph(thisResult.classId);
+                row.Cells[1].AddParagraph(thisResult.topicId);
+                row.Cells[2].AddParagraph(thisResult.points);
+                row.Cells[3].AddParagraph(thisResult.username);
+                row.Cells[4].AddParagraph(thisResult.time);
+            }
 
         }
 
