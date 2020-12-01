@@ -1,21 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace TrainingEng_0._0._1
 {
@@ -31,7 +20,7 @@ namespace TrainingEng_0._0._1
         {
             InitializeComponent();
             //Название темы
-            TopicLabel.Content = "Тестирование по теме:\n"+TopicName;
+            TopicLabel.Content = "Тестирование по теме:\n" + TopicName;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -48,7 +37,7 @@ namespace TrainingEng_0._0._1
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             //Если ввели имя и прошли фильтрацию
-            if (NameInputTextBox.Text != "" )
+            if (NameInputTextBox.Text != "")
             {
                 String UserName = NameInputTextBox.Text;
                 //Перемешивание вопросов в списке
@@ -62,5 +51,5 @@ namespace TrainingEng_0._0._1
             }
         }
     }
-    
+
 }

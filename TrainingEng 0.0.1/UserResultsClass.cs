@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrainingEng_0._0._1
 {
@@ -24,7 +20,7 @@ namespace TrainingEng_0._0._1
 
         public override string ToString()
         {
-            return classId.ToString()+" "+ topicId.ToString()+" "+ points.ToString() +" "+ username.ToString() + " " + time.ToString();
+            return classId.ToString() + " " + topicId.ToString() + " " + points.ToString() + " " + username.ToString() + " " + time.ToString();
         }
     }
 }

@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TrainingEng_0._0._1
 {
@@ -25,7 +16,7 @@ namespace TrainingEng_0._0._1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void TwoExitList_Click(object sender, RoutedEventArgs e)
@@ -191,8 +182,8 @@ namespace TrainingEng_0._0._1
             String TaskClass = Globals.Classes.ToString();
 
             //Заполняем названия button'ов из БД
-            for (int i=0; i < ButtonsList.Count; i++)
-                ButtonsList[i].Content = SQLiteClass.SQLiteGetOne("SELECT text FROM Topics WHERE (class_id=" + TaskClass + " AND topic_id=" + (i+1).ToString() + ");");
+            for (int i = 0; i < ButtonsList.Count; i++)
+                ButtonsList[i].Content = SQLiteClass.SQLiteGetOne("SELECT text FROM Topics WHERE (class_id=" + TaskClass + " AND topic_id=" + (i + 1).ToString() + ");");
 
         }
 

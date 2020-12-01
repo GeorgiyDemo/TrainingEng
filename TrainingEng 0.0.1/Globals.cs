@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrainingEng_0._0._1
 {
@@ -22,7 +19,7 @@ namespace TrainingEng_0._0._1
 
         }
 
-       
+
     }
 
 
