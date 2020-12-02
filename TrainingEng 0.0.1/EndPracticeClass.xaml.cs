@@ -14,11 +14,12 @@ namespace TrainingEng_0._0._1
     {
         private String UserName;
         private int TotalPoints;
-        public EndPracticeClass(String UserName, int TotalPoints)
+        public EndPracticeClass(String UserName, int TotalPoints, int QuestionsCount)
         {
             InitializeComponent();
+
             //Вывод результата на экран
-            ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString() + "/5";
+            ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString() + "/"+QuestionsCount;
 
             //Выставление полей
             this.TotalPoints = TotalPoints;

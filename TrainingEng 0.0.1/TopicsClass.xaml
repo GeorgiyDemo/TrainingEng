@@ -30,6 +30,6 @@
         <Button x:Name="Topic18"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,159,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="Topic18_Click"/>
         <Button x:Name="Topic19"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,230,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="Topic19_Click"/>
         <Button x:Name="Topic20"  Content="Тема" HorizontalAlignment="Left" Height="40" Margin="703,301,0,0" VerticalAlignment="Top" Width="148" Background="#B2FFFFFF" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="Topic20_Click"/>
-        <Button x:Name="TotalTest"  Content="Итоговый тест" HorizontalAlignment="Left" Height="40" Margin="279,365,0,0" VerticalAlignment="Top" Width="359" Background="#B230B808" BorderBrush="{x:Null}" FontFamily="Corbel Light" FontSize="22" Click="TotalTest_Click"/>
+        <Button x:Name="FinalTestButton"  Content="Итоговый тест" HorizontalAlignment="Left" Height="40" Margin="279,365,0,0" VerticalAlignment="Top" Width="359" Background="#B230B808" BorderBrush="{x:Null}" FontFamily="Corbel Light" FontSize="22" Click="FinalTestButton_Click"/>
     </Grid>
 </Page>

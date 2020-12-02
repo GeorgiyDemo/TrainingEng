@@ -192,6 +192,8 @@ namespace TrainingEng_0._0._1
         {
             //21 тест будет финальным (по порядковому номеру)
             Globals.TheoryFail = 21;
+            TotalBeginPracticeClass nextPage = new TotalBeginPracticeClass();
+            NavigationService.Navigate(nextPage);
 
         }
     }

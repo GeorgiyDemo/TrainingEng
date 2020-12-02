@@ -13,25 +13,24 @@ namespace TrainingEng_0._0._1
     /// </summary>
     /// 
 
-    public partial class BeginPracticeClass : Page
+    public partial class TotalBeginPracticeClass : Page
     {
         private List<TaskClass> TaskList;
-        public BeginPracticeClass(String TopicName)
+        public TotalBeginPracticeClass()
         {
             InitializeComponent();
             //Название темы
-            TopicLabel.Content = "Тестирование по теме:\n" + TopicName;
+            TopicLabel.Content = "Итоговый тест по классу "+Globals.Classes.ToString();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //Текущий номер топика
-            int TopicNumber = Globals.TheoryFail;
             //Выбранный класс школьника
             int ClassNumber = Globals.Classes;
+
             //Получаем данные с SQLite
-            TaskList = SQLiteClass.SQLiteGetTasks(TopicNumber, ClassNumber);
+            TaskList = SQLiteClass.SQLiteGetTotalTasks(ClassNumber);
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
@@ -42,7 +41,7 @@ namespace TrainingEng_0._0._1
                 String UserName = NameInputTextBox.Text;
                 //Перемешивание вопросов в списке
                 TaskList = TaskList.OrderBy(a => Guid.NewGuid()).ToList();
-                PracticeClass newPractice = new PracticeClass(UserName, TaskList, 0, 5);
+                PracticeClass newPractice = new PracticeClass(UserName, TaskList, 0, 20);
                 NavigationService.Navigate(newPractice);
             }
             else

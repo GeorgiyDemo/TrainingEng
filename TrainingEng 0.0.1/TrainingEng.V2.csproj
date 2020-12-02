@@ -119,6 +119,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TotalBeginPracticeClass.xaml.cs">
+      <DependentUpon>TotalBeginPracticeClass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EndPracticeClass.xaml.cs">
       <DependentUpon>EndPracticeClass.xaml</DependentUpon>
     </Compile>
@@ -132,6 +135,10 @@
       <DependentUpon>PracticeClass.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserResultsClass.cs" />
+    <Page Include="TotalBeginPracticeClass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EndPracticeClass.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

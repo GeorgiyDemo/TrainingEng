@@ -23,8 +23,9 @@ namespace TrainingEng_0._0._1
         private TaskClass CurrentTask;
         private int GoodAnswersCount;
         private String UserName;
+        private int QuestionsCount;
 
-        public PracticeClass(String UserName, List<TaskClass> TaskList, int GoodAnswersCount)
+        public PracticeClass(String UserName, List<TaskClass> TaskList, int GoodAnswersCount, int QuestionsCount)
         {
             InitializeComponent();
             //Текущее задание, которое мы отображаем на этой странице
@@ -35,6 +36,7 @@ namespace TrainingEng_0._0._1
             this.TaskList = TaskList;
             this.GoodAnswersCount = GoodAnswersCount;
             this.UserName = UserName;
+            this.QuestionsCount = QuestionsCount;
             //Вызываем метод форматирования интерфейса
             this.PageFormater();
         }
@@ -43,7 +45,7 @@ namespace TrainingEng_0._0._1
         private void PageFormater()
         {
             //Отображаем прогресс 
-            PointsLabel.Content = "Кол-во набранных баллов:\n" + this.GoodAnswersCount + "/5";
+            PointsLabel.Content = "Кол-во набранных баллов:\n" + this.GoodAnswersCount + "/"+this.QuestionsCount;
 
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
@@ -151,12 +153,12 @@ namespace TrainingEng_0._0._1
 
             if (this.TaskList.Count == 0)
             {
-                EndPracticeClass nextPage = new EndPracticeClass(this.UserName, this.GoodAnswersCount);
+                EndPracticeClass nextPage = new EndPracticeClass(this.UserName, this.GoodAnswersCount, this.QuestionsCount);
                 NavigationService.Navigate(nextPage);
             }
             else
             {
-                PracticeClass nextPage = new PracticeClass(this.UserName, this.TaskList, this.GoodAnswersCount);
+                PracticeClass nextPage = new PracticeClass(this.UserName, this.TaskList, this.GoodAnswersCount, this.QuestionsCount);
                 NavigationService.Navigate(nextPage);
             }
 
