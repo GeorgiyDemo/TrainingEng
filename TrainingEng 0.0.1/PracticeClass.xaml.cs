@@ -45,7 +45,7 @@ namespace TrainingEng_0._0._1
         private void PageFormater()
         {
             //Отображаем прогресс 
-            PointsLabel.Content = "Кол-во набранных баллов:\n" + this.GoodAnswersCount + "/"+this.QuestionsCount;
+            PointsLabel.Content = "Кол-во набранных баллов:\n" + this.GoodAnswersCount + "/" + this.QuestionsCount;
 
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;
@@ -113,7 +113,7 @@ namespace TrainingEng_0._0._1
         {
             String result = "NONE";
             //Если виден Textbot, то ответ берем оттуда
-            if (TextBox.Visibility == Visibility.Visible)
+            if ((TextBox.Visibility == Visibility.Visible) && (TextBox.Text != ""))
             {
                 result = TextBox.Text;
             }
@@ -142,24 +142,36 @@ namespace TrainingEng_0._0._1
             return result;
         }
 
-        //TODO Какое-то визуальное подтверждение того, что верно, а что-нет?
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
+
             //Получаем ответы из элементов
             String Task1Answer = GetTaskAnswer(TaskInputTextBox, TaskRadioButton1, TaskRadioButton2, TaskRadioButton3, TaskRadioButton4);
-            //Если результаты 1 задания равны, то +1
-            if (TaskKey.ToLower() == Task1Answer.ToLower())
-                this.GoodAnswersCount++;
 
-            if (this.TaskList.Count == 0)
-            {
-                EndPracticeClass nextPage = new EndPracticeClass(this.UserName, this.GoodAnswersCount, this.QuestionsCount);
-                NavigationService.Navigate(nextPage);
-            }
+            //Проверка на пустой ответ от пользователя
+            if (Task1Answer == "NONE")
+                MessageBox.Show("Необходимо ответить на вопрос");
+
+            //Если пользователь ввел ответ
             else
             {
-                PracticeClass nextPage = new PracticeClass(this.UserName, this.TaskList, this.GoodAnswersCount, this.QuestionsCount);
-                NavigationService.Navigate(nextPage);
+                //Если ответ верный, то +1
+                if (TaskKey.ToLower() == Task1Answer.ToLower())
+                    this.GoodAnswersCount++;
+
+                //Если больше нет вопросов - открываем форму финальных тестов
+                if (this.TaskList.Count == 0)
+                {
+                    EndPracticeClass nextPage = new EndPracticeClass(this.UserName, this.GoodAnswersCount, this.QuestionsCount);
+                    NavigationService.Navigate(nextPage);
+                }
+
+                //Если еще остались вопросы - открываем новую форму
+                else
+                {
+                    PracticeClass nextPage = new PracticeClass(this.UserName, this.TaskList, this.GoodAnswersCount, this.QuestionsCount);
+                    NavigationService.Navigate(nextPage);
+                }
             }
 
         }

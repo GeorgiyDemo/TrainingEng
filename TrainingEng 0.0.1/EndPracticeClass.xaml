@@ -10,7 +10,7 @@
 
     <Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000">
-            <Button x:Name="DownloadButton"  Content="Сохранить результат" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="298" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="DownloadButton_Click" Foreground="White" Margin="329,197,0,0"/>
+            <Button x:Name="DownloadButton"  Content="Сохранить результат в PDF" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="298" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="DownloadButton_Click" Foreground="White" Margin="329,197,0,0"/>
         </Border>
         <Label x:Name="ResultsLabel" HorizontalContentAlignment="Center" Content="Ваш результат:" HorizontalAlignment="Left" Height="97" Margin="10,96,0,0" VerticalAlignment="Top" Width="930" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
 

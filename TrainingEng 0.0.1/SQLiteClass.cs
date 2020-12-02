@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.Windows;
 
 namespace TrainingEng_0._0._1
 {
@@ -104,7 +103,7 @@ namespace TrainingEng_0._0._1
             //Цикл по каждой теме
             for (int TopicNumber = 1; TopicNumber < 21; TopicNumber++)
             {
-                List<TaskClass> BufferList = SQLiteGetTasks(TopicNumber, ClassNumber);   
+                List<TaskClass> BufferList = SQLiteGetTasks(TopicNumber, ClassNumber);
                 //Генерируем рандомный индекс задания, которое попадёт в финальный тест
                 Random rnd = new Random();
                 int randomTask = rnd.Next(0, 5);

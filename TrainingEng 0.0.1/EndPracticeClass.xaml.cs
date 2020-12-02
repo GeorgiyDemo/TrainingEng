@@ -19,7 +19,7 @@ namespace TrainingEng_0._0._1
             InitializeComponent();
 
             //Вывод результата на экран
-            ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString() + "/"+QuestionsCount;
+            ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString() + "/" + QuestionsCount;
 
             //Выставление полей
             this.TotalPoints = TotalPoints;

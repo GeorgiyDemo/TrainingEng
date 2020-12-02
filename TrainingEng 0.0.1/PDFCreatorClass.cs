@@ -112,16 +112,16 @@ namespace TrainingEng_0._0._1
 
             // Объявляем размеры колонок таблицы
             Column column = this.table.AddColumn("4cm");
+            column.Format.Alignment = ParagraphAlignment.Right;
+
+            column = this.table.AddColumn("4cm");
+            column.Format.Alignment = ParagraphAlignment.Right;
+
+            column = this.table.AddColumn("4cm");
+            column.Format.Alignment = ParagraphAlignment.Right;
+
+            column = this.table.AddColumn("4cm");
             column.Format.Alignment = ParagraphAlignment.Center;
-
-            column = this.table.AddColumn("4cm");
-            column.Format.Alignment = ParagraphAlignment.Right;
-
-            column = this.table.AddColumn("4cm");
-            column.Format.Alignment = ParagraphAlignment.Right;
-
-            column = this.table.AddColumn("4cm");
-            column.Format.Alignment = ParagraphAlignment.Right;
 
             //Добавляем колонки
             Row row = table.AddRow();

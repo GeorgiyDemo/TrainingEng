@@ -20,7 +20,7 @@ namespace TrainingEng_0._0._1
         {
             InitializeComponent();
             //Название темы
-            TopicLabel.Content = "Итоговый тест по классу "+Globals.Classes.ToString();
+            TopicLabel.Content = "Итоговый тест по классу " + Globals.Classes.ToString();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
