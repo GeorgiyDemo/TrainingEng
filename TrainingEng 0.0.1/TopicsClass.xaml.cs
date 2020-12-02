@@ -187,8 +187,11 @@ namespace TrainingEng_0._0._1
 
         }
 
-        private void TotalTest_Click(object sender, RoutedEventArgs e)
+        //TODO Берет из каждой темы рандомно по 1 вопросу и тем самым формирует новый список, который передается далее в конструктор
+        private void FinalTestButton_Click(object sender, RoutedEventArgs e)
         {
+            //21 тест будет финальным (по порядковому номеру)
+            Globals.TheoryFail = 21;
 
         }
     }
