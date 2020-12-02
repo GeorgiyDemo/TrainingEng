@@ -4,6 +4,7 @@ using MigraDoc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows;
 
 namespace TrainingEng_0._0._1
 {
@@ -39,7 +40,6 @@ namespace TrainingEng_0._0._1
 
             //Заполняем документ данными
             FillContent();
-
 
             MigraDoc.DocumentObjectModel.IO.DdlWriter.WriteToFile(document, "MigraDoc.mdddl");
 
@@ -151,7 +151,8 @@ namespace TrainingEng_0._0._1
         //Заполнение таблицы данными
         private void FillContent()
         {
-
+            //Добавление колонки из-за объединенных колонок
+            this.table.AddRow();
             for (int i = 0; i < ResultsList.Count; i++)
             {
                 UserResultsClass thisResult = ResultsList[i];

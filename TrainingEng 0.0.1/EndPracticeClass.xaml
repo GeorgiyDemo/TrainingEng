@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TrainingEng_0._0._1"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="950"
-      Title="TwoThemaPractic_1">
+      Title="TwoThemaPractic_1" Loaded="Page_Loaded">
 
     <Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="950" Background="#7F080808" BorderBrush="#7F000000">

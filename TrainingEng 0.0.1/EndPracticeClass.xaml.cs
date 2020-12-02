@@ -25,13 +25,21 @@ namespace TrainingEng_0._0._1
             this.TotalPoints = TotalPoints;
             this.UserName = UserName;
 
-            //Запись итогов тестирования в СУБД
-            this.ResultSQLWriter();
 
         }
 
+
+
+
+        private void DownloadButton_Click(object sender, RoutedEventArgs e)
+        {
+            String TimeNow = DateTime.Now.ToString("ddMMyyyy HHmmss");
+            List<UserResultsClass> UserResults = SQLiteClass.SQLiteGetUserResults(this.UserName);
+            PDFCreatorClass PdfObject = new PDFCreatorClass("Export " + TimeNow + ".pdf", this.UserName, UserResults);
+        }
+
         //Запись результата тестирования в SQlite
-        private void ResultSQLWriter()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             //Текущий номер топика
             String TopicNumber = Globals.TheoryFail.ToString();
@@ -45,14 +53,6 @@ namespace TrainingEng_0._0._1
             //Строка для записи данных в SQLite
             String SQLString = String.Format("INSERT INTO Results(class_id, topic_id, points,username, time) VALUES ({0},{1},{2},'{3}','{4}')", TaskClass, TopicNumber, this.TotalPoints, this.UserName, TimeNow);
             SQLiteClass.SQLiteExecute(SQLString);
-
-        }
-
-        private void DownloadButton_Click(object sender, RoutedEventArgs e)
-        {
-            String TimeNow = DateTime.Now.ToString("ddMMyyyy HHmmss");
-            List<UserResultsClass> UserResults = SQLiteClass.SQLiteGetUserResults(this.UserName);
-            PDFCreatorClass PdfObject = new PDFCreatorClass("Export " + TimeNow + ".pdf", this.UserName, UserResults);
         }
     }
 
