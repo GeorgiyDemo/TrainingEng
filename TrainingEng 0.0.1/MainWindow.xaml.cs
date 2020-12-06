@@ -46,7 +46,8 @@ namespace TrainingEng_0._0._1
 
         private void BtnPage4_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+             Environment.Exit(0);
+
         }
     }
 }

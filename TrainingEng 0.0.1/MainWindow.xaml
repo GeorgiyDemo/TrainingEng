@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainingEng_0._0._1"
         mc:Ignorable="d"
-        Title="Eadyical Menu" Height="550" Width="950" Icon="Logo1.png" ResizeMode="CanMinimize" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="3" BorderBrush="#FFD0E9F0">
+        Title="Eadyical Menu" Height="550" Width="950" Icon="Logo1.png" ResizeMode="CanMinimize" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="3" BorderBrush="#FFD0E9F0" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="229*"/>

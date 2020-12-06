@@ -15,6 +15,6 @@
 
         <Label x:Name="TopicLabel" HorizontalContentAlignment="Center" Content="Тестирование по теме:" HorizontalAlignment="Left" Height="75" Margin="10,96,0,0" VerticalAlignment="Top" Width="930" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
         <Button x:Name="StartButton"  Content="Начать" HorizontalAlignment="Left" Height="43" Margin="326,282,0,0" VerticalAlignment="Top" Width="298" Background="{x:Null}" BorderBrush="White" FontFamily="Corbel Light" FontSize="18" Click="StartButton_Click" Foreground="White"/>
-        <Label x:Name="InputNameLabel" HorizontalContentAlignment="Center" Content="Введите ваше имя:" HorizontalAlignment="Left" Height="48" Margin="10,176,0,0" VerticalAlignment="Top" Width="930" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="InputNameLabel" HorizontalContentAlignment="Center" Content="Введите ваше ФИО:" HorizontalAlignment="Left" Height="48" Margin="10,176,0,0" VerticalAlignment="Top" Width="930" FontFamily="Corbel Light" FontSize="18" Background="{x:Null}" Foreground="White"/>
     </Grid>
 </Page>
