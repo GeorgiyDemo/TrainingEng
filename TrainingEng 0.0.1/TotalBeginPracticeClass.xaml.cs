@@ -38,7 +38,7 @@ namespace TrainingEng_0._0._1
         {
 
             //Если ввели имя и прошли фильтрацию
-                if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")))
+                if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")) && (!Regex.IsMatch(NameInputTextBox.Text, @"[\d-]")))
                 {
                     //Выставляем то, что мы сейчас проходим тест
                     Globals.isTestProcessing = true;

@@ -38,7 +38,7 @@ namespace TrainingEng_0._0._1
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             //Если ввели имя и прошли фильтрацию
-            if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")))
+            if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")) && (!Regex.IsMatch(NameInputTextBox.Text, @"[\d-]")))
             {
                 //Флаг того, что мы начали прохождение теста
                 Globals.isTestProcessing = true;
