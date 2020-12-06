@@ -18,6 +18,7 @@ namespace TrainingEng_0._0._1
         {
             InitializeComponent();
 
+            Globals.isTestProcessing = false;
             //Вывод результата на экран
             ResultsLabel.Content = "Ваш результат: " + TotalPoints.ToString() + "/" + QuestionsCount;
 

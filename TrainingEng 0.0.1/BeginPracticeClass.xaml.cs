@@ -40,6 +40,8 @@ namespace TrainingEng_0._0._1
             //Если ввели имя и прошли фильтрацию
             if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")))
             {
+                //Флаг того, что мы начали прохождение теста
+                Globals.isTestProcessing = true;
                 String UserName = NameInputTextBox.Text;
                 //Перемешивание вопросов в списке
                 TaskList = TaskList.OrderBy(a => Guid.NewGuid()).ToList();
