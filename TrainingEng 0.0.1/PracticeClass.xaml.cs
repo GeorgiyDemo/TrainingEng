@@ -45,7 +45,7 @@ namespace TrainingEng_0._0._1
         private void PageFormater()
         {
             //Отображаем прогресс 
-            PointsLabel.Content = "Кол-во набранных баллов:" + this.GoodAnswersCount + "/" + this.QuestionsCount;
+            PointsLabel.Content = "Кол-во набранных баллов: " + this.GoodAnswersCount + "/" + this.QuestionsCount;
 
             //Текущий номер топика
             int TopicNumber = Globals.TheoryFail;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -37,7 +38,7 @@ namespace TrainingEng_0._0._1
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             //Если ввели имя и прошли фильтрацию
-            if (NameInputTextBox.Text != "")
+            if ((NameInputTextBox.Text != "") && (Regex.IsMatch(NameInputTextBox.Text, @"\p{IsCyrillic}")))
             {
                 String UserName = NameInputTextBox.Text;
                 //Перемешивание вопросов в списке
@@ -47,7 +48,7 @@ namespace TrainingEng_0._0._1
             }
             else
             {
-                MessageBox.Show("Для продолжения работы введите ваше имя");
+                MessageBox.Show("Для продолжения работы введите ваше имя на русском языке");
             }
         }
     }
